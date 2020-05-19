@@ -22,7 +22,8 @@ private slots:
 
     void on_pushButtonShow_clicked();
 
-    void on_pushButtonTest_clicked();
+private:
+    void flipColumns();
 
 private:
     Ui::MainWindow *ui;

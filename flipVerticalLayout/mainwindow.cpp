@@ -14,27 +14,17 @@ MainWindow::MainWindow(QWidget *parent)
     ui->frameButtons->hide();
     const int w{m_sceneSize};
     const int h{m_sceneSize * m_widthHeight.second / m_widthHeight.first};
-    resize(w,h+40);
-    ui->frameM->setMaximumSize(h,h);
-    ui->frameM->setMinimumSize(h,h);
-    ui->frameL->setMaximumSize((w-h)/2,h+40);
-    ui->frameL->setMinimumSize((w-h)/2,h+40);
-    ui->frameR->setMaximumSize((w-h)/2,h+40);
-    ui->frameR->setMinimumSize((w-h)/2,h+40);
 
-    QLayout* tl = this->layout();
-    qDebug() << tl->count();
-    std::vector<QLayoutItem*> menuOnTheLeft{tl->itemAt(0),tl->itemAt(1),tl->itemAt(2)};
-    std::vector<QLayoutItem*> menuOnTheRight{tl->itemAt(2),tl->itemAt(1),tl->itemAt(0)};
-    //takeAt
-    //update
-    //invalidate
-    //activate
-    //removeItem
-    //adItem
-//    ui->pushButton->hide();
-//    ui->pushButtonL->hide();
-//    ui->pushButtonExitL->hide();
+    const QSize sizeMiddle{h,h};
+    const QSize sizeSide{(w-h)/2,h};
+
+    ui->frameM->setMaximumSize(sizeMiddle);
+    ui->frameM->setMinimumSize(sizeMiddle);
+
+    ui->frameL->setMaximumSize(sizeSide);
+    ui->frameL->setMinimumSize(sizeSide);
+    ui->frameR->setMaximumSize(sizeSide);
+    ui->frameR->setMinimumSize(sizeSide);
 }
 
 MainWindow::~MainWindow()
@@ -45,6 +35,7 @@ MainWindow::~MainWindow()
 
 void MainWindow::on_pushButtonFlip_clicked()
 {
+    flipColumns();
 }
 
 
@@ -59,12 +50,10 @@ void MainWindow::on_pushButtonShow_clicked()
     }
 }
 
-void MainWindow::on_pushButtonTest_clicked()
+void MainWindow::flipColumns()
 {
     QLayout* tl = this->layout();
-    qDebug() << tl->count();
     std::vector<QLayoutItem*> current{tl->itemAt(0),tl->itemAt(1),tl->itemAt(2)};
-    std::vector<QLayoutItem*> flipped{tl->itemAt(2),tl->itemAt(1),tl->itemAt(0)};
 
     tl->removeItem(current[2]);
     tl->removeItem(current[1]);
