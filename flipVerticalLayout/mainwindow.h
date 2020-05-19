@@ -18,13 +18,11 @@ public:
     ~MainWindow();
 
 private slots:
-    void on_pushButtonFlipL_clicked();
+    void on_pushButtonFlip_clicked();
 
-    void on_pushButtonFlipR_clicked();
+    void on_pushButtonShow_clicked();
 
-    void on_pushButtonShowButtonsL_clicked();
-
-    void on_pushButtonShowButtonsR_clicked();
+    void on_pushButtonTest_clicked();
 
 private:
     Ui::MainWindow *ui;
