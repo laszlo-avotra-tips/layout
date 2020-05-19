@@ -14,21 +14,6 @@
    <string>MainWindow</string>
   </property>
   <layout class="QHBoxLayout" name="horizontalLayout">
-   <property name="spacing">
-    <number>0</number>
-   </property>
-   <property name="leftMargin">
-    <number>0</number>
-   </property>
-   <property name="topMargin">
-    <number>0</number>
-   </property>
-   <property name="rightMargin">
-    <number>0</number>
-   </property>
-   <property name="bottomMargin">
-    <number>0</number>
-   </property>
    <item>
     <widget class="QFrame" name="frameL">
      <property name="minimumSize">
@@ -259,19 +244,38 @@
     </widget>
    </item>
    <item>
-    <widget class="QGraphicsView" name="graphicsView">
-     <property name="minimumSize">
-      <size>
-       <width>256</width>
-       <height>192</height>
-      </size>
+    <widget class="QFrame" name="frameM">
+     <property name="frameShape">
+      <enum>QFrame::StyledPanel</enum>
      </property>
-     <property name="maximumSize">
-      <size>
-       <width>2560</width>
-       <height>1440</height>
-      </size>
+     <property name="frameShadow">
+      <enum>QFrame::Raised</enum>
      </property>
+     <layout class="QVBoxLayout" name="verticalLayout_7">
+      <item>
+       <widget class="QGraphicsView" name="graphicsView">
+        <property name="minimumSize">
+         <size>
+          <width>256</width>
+          <height>192</height>
+         </size>
+        </property>
+        <property name="maximumSize">
+         <size>
+          <width>2560</width>
+          <height>1440</height>
+         </size>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QPushButton" name="pushButtonTest">
+        <property name="text">
+         <string>Test</string>
+        </property>
+       </widget>
+      </item>
+     </layout>
     </widget>
    </item>
    <item>

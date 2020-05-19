@@ -1,5 +1,8 @@
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
+#include <QDebug>
+#include <QLayoutItem>
+#include <QLayout>
 
 MainWindow::MainWindow(QWidget *parent)
     : QWidget(parent)
@@ -15,12 +18,19 @@ MainWindow::MainWindow(QWidget *parent)
     ui->frameBL->hide();
     const int w{m_sceneSize};
     const int h{m_sceneSize * m_widthHeight.second / m_widthHeight.first};
-//    this->setMinimumSize(w,h);
-//    this->setMaximumSize(w,h);
     resize(w,h);
-//    ui->graphicsView->setMaximumSize(h,h);
-//    ui->graphicsView->setMinimumSize(h,h);
     ui->graphicsView->resize(w,w);
+
+    QLayout* tl = this->layout();
+    qDebug() << tl->count();
+    std::vector<QLayoutItem*> menuOnTheLeft{tl->itemAt(0),tl->itemAt(1),tl->itemAt(2)};
+    std::vector<QLayoutItem*> menuOnTheRight{tl->itemAt(2),tl->itemAt(1),tl->itemAt(0)};
+    //takeAt
+    //update
+    //invalidate
+    //activate
+    //removeItem
+    //adItem
 }
 
 MainWindow::~MainWindow()
