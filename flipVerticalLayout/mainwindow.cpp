@@ -39,14 +39,16 @@ void MainWindow::on_pushButtonFlip_clicked()
 }
 
 
-void MainWindow::on_pushButtonShow_clicked()
+void MainWindow::on_pushButtonMenu_clicked()
 {
     if(!ui->frameButtons->isVisible()){
         ui->frameButtons->show();
         ui->pushButtonFlip->show();
+        ui->pushButtonMenu->setText("Hide Menu");
     } else {
         ui->frameButtons->hide();
         ui->pushButtonFlip->hide();
+        ui->pushButtonMenu->setText("Show Menu");
     }
 }
 

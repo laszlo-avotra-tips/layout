@@ -72,7 +72,7 @@
        <number>40</number>
       </property>
       <item>
-       <widget class="QPushButton" name="pushButtonShow">
+       <widget class="QPushButton" name="pushButtonMenu">
         <property name="sizePolicy">
          <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
           <horstretch>0</horstretch>
@@ -92,7 +92,7 @@
          </size>
         </property>
         <property name="text">
-         <string>Show L</string>
+         <string>Show Menu</string>
         </property>
        </widget>
       </item>
@@ -166,26 +166,7 @@
             </size>
            </property>
            <property name="text">
-            <string>Button</string>
-           </property>
-          </widget>
-         </item>
-         <item>
-          <widget class="QPushButton" name="pushButtonL">
-           <property name="sizePolicy">
-            <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
-             <horstretch>0</horstretch>
-             <verstretch>0</verstretch>
-            </sizepolicy>
-           </property>
-           <property name="minimumSize">
-            <size>
-             <width>80</width>
-             <height>25</height>
-            </size>
-           </property>
-           <property name="text">
-            <string>Button L</string>
+            <string>Button 1</string>
            </property>
           </widget>
          </item>
@@ -204,7 +185,26 @@
             </size>
            </property>
            <property name="text">
-            <string>Exit L</string>
+            <string>Exit</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QPushButton" name="pushButtonL">
+           <property name="sizePolicy">
+            <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+             <horstretch>0</horstretch>
+             <verstretch>0</verstretch>
+            </sizepolicy>
+           </property>
+           <property name="minimumSize">
+            <size>
+             <width>80</width>
+             <height>25</height>
+            </size>
+           </property>
+           <property name="text">
+            <string>Button 2</string>
            </property>
           </widget>
          </item>
@@ -423,7 +423,7 @@
          </size>
         </property>
         <property name="text">
-         <string>Flip L</string>
+         <string>Flip Sides</string>
         </property>
        </widget>
       </item>

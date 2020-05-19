@@ -20,7 +20,7 @@ public:
 private slots:
     void on_pushButtonFlip_clicked();
 
-    void on_pushButtonShow_clicked();
+    void on_pushButtonMenu_clicked();
 
 private:
     void flipColumns();
