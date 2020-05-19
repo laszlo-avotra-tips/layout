@@ -3,6 +3,7 @@
 
 #include <QWidget>
 #include <vector>
+#include <map>
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }
@@ -27,5 +28,8 @@ private slots:
 
 private:
     Ui::MainWindow *ui;
+    const std::pair<int,int> m_widthHeight{3,2};
+    const int m_sceneSize{800};
+
 };
 #endif // MAINWINDOW_H

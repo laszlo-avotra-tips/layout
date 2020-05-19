@@ -13,6 +13,12 @@ MainWindow::MainWindow(QWidget *parent)
 
     ui->frameTL->hide();
     ui->frameBL->hide();
+    const int w{m_sceneSize};
+    const int h{m_sceneSize * m_widthHeight.second / m_widthHeight.first};
+    this->setMinimumSize(w,h);
+    this->setMaximumSize(w,h);
+    ui->graphicsView->setMaximumSize(h,h);
+    ui->graphicsView->setMinimumSize(h,h);
 }
 
 MainWindow::~MainWindow()
