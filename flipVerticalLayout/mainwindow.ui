@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>711</width>
-    <height>626</height>
+    <height>558</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -75,8 +75,8 @@
         </property>
         <property name="minimumSize">
          <size>
-          <width>95</width>
-          <height>0</height>
+          <width>100</width>
+          <height>25</height>
          </size>
         </property>
         <property name="maximumSize">
@@ -216,6 +216,18 @@
          </property>
          <item>
           <widget class="QPushButton" name="pushButtonExitL">
+           <property name="sizePolicy">
+            <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+             <horstretch>0</horstretch>
+             <verstretch>0</verstretch>
+            </sizepolicy>
+           </property>
+           <property name="minimumSize">
+            <size>
+             <width>100</width>
+             <height>25</height>
+            </size>
+           </property>
            <property name="text">
             <string>Exit L</string>
            </property>
@@ -231,6 +243,12 @@
           <horstretch>0</horstretch>
           <verstretch>0</verstretch>
          </sizepolicy>
+        </property>
+        <property name="minimumSize">
+         <size>
+          <width>100</width>
+          <height>25</height>
+         </size>
         </property>
         <property name="text">
          <string>Hide R</string>
@@ -294,6 +312,18 @@
       </property>
       <item>
        <widget class="QPushButton" name="pushButtonShowButtonsR">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
+        <property name="minimumSize">
+         <size>
+          <width>100</width>
+          <height>25</height>
+         </size>
+        </property>
         <property name="text">
          <string>Show R</string>
         </property>
@@ -422,6 +452,18 @@
          </property>
          <item>
           <widget class="QPushButton" name="pushButtonExitR">
+           <property name="sizePolicy">
+            <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+             <horstretch>0</horstretch>
+             <verstretch>0</verstretch>
+            </sizepolicy>
+           </property>
+           <property name="minimumSize">
+            <size>
+             <width>100</width>
+             <height>25</height>
+            </size>
+           </property>
            <property name="text">
             <string>Exit R</string>
            </property>
@@ -432,10 +474,16 @@
       </item>
       <item>
        <widget class="QPushButton" name="pushButtonFlipL">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
         <property name="minimumSize">
          <size>
-          <width>95</width>
-          <height>23</height>
+          <width>100</width>
+          <height>25</height>
          </size>
         </property>
         <property name="maximumSize">
