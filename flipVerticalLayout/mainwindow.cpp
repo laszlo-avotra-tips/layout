@@ -54,7 +54,7 @@ void MainWindow::on_pushButtonMenu_clicked()
 
 void MainWindow::flipColumns()
 {
-    QLayout* tl = this->layout();
+    QLayout* tl = ui->pageMain->layout();
     std::vector<QLayoutItem*> current{tl->itemAt(0),tl->itemAt(1),tl->itemAt(2)};
 
     tl->removeItem(current[2]);
@@ -64,4 +64,24 @@ void MainWindow::flipColumns()
     tl->addItem(current[1]);
     tl->addItem(current[0]);
     tl->update();
+}
+
+void MainWindow::on_pushButton_clicked()
+{
+    ui->stackedWidget->setCurrentIndex(1);
+}
+
+void MainWindow::on_pushButton_page1_clicked()
+{
+    ui->stackedWidget->setCurrentIndex(0);
+}
+
+void MainWindow::on_pushButtonL_clicked()
+{
+    ui->stackedWidget->setCurrentIndex(2);
+}
+
+void MainWindow::on_pushButton_page2_clicked()
+{
+    ui->stackedWidget->setCurrentIndex(0);
 }
