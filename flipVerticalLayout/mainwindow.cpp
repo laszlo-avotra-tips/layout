@@ -1,18 +1,30 @@
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
+#include <QDebug>
+#include <QLayoutItem>
+#include <QLayout>
 
 MainWindow::MainWindow(QWidget *parent)
     : QWidget(parent)
     , ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
-    ui->frameBR->hide();
-    ui->pushButtonShowButtonsR->hide();
-    ui->pushButtonFlipR->hide();
-    ui->pushButtonFlipL->hide();
+    ui->pushButtonFlip->hide();
 
-    ui->frameTL->hide();
-    ui->frameBL->hide();
+    ui->frameButtons->hide();
+    const int w{m_sceneSize};
+    const int h{m_sceneSize * m_widthHeight.second / m_widthHeight.first};
+
+    const QSize sizeMiddle{h,h};
+    const QSize sizeSide{(w-h)/2,h};
+
+    ui->frameM->setMaximumSize(sizeMiddle);
+    ui->frameM->setMinimumSize(sizeMiddle);
+
+    ui->frameL->setMaximumSize(sizeSide);
+    ui->frameL->setMinimumSize(sizeSide);
+    ui->frameR->setMaximumSize(sizeSide);
+    ui->frameR->setMinimumSize(sizeSide);
 }
 
 MainWindow::~MainWindow()
@@ -21,50 +33,35 @@ MainWindow::~MainWindow()
 }
 
 
-void MainWindow::on_pushButtonFlipL_clicked()
+void MainWindow::on_pushButtonFlip_clicked()
 {
-    ui->frameBL->hide();
-    ui->frameBR->show();
-    ui->pushButtonShowButtonsL->hide();
-    ui->pushButtonShowButtonsR->show();
-    ui->frameTR->hide();
-    ui->frameTL->show();
-    ui->pushButtonFlipL->hide();
-    ui->pushButtonFlipR->show();
+    flipColumns();
 }
 
-void MainWindow::on_pushButtonFlipR_clicked()
-{
-    ui->frameBL->show();
-    ui->frameBR->hide();
-    ui->pushButtonShowButtonsL->show();
-    ui->pushButtonShowButtonsR->hide();
-    ui->frameTL->hide();
-    ui->frameTR->show();
-    ui->pushButtonFlipL->show();
-    ui->pushButtonFlipR->hide();
-}
 
-void MainWindow::on_pushButtonShowButtonsL_clicked()
+void MainWindow::on_pushButtonMenu_clicked()
 {
-    if(!ui->frameBL->isVisible()){
-        ui->frameBL->show();
-        ui->pushButtonFlipL->show();
-        ui->frameTR->show();
+    if(!ui->frameButtons->isVisible()){
+        ui->frameButtons->show();
+        ui->pushButtonFlip->show();
+        ui->pushButtonMenu->setText("Hide Menu");
     } else {
-        ui->frameBL->hide();
-        ui->pushButtonFlipL->hide();
+        ui->frameButtons->hide();
+        ui->pushButtonFlip->hide();
+        ui->pushButtonMenu->setText("Show Menu");
     }
 }
 
-void MainWindow::on_pushButtonShowButtonsR_clicked()
+void MainWindow::flipColumns()
 {
-    if(!ui->frameBR->isVisible()){
-        ui->frameBR->show();
-        ui->pushButtonFlipR->show();
-        ui->frameTL->show();
-    } else {
-        ui->frameBR->hide();
-        ui->pushButtonFlipR->hide();
-    }
+    QLayout* tl = this->layout();
+    std::vector<QLayoutItem*> current{tl->itemAt(0),tl->itemAt(1),tl->itemAt(2)};
+
+    tl->removeItem(current[2]);
+    tl->removeItem(current[1]);
+    tl->removeItem(current[0]);
+    tl->addItem(current[2]);
+    tl->addItem(current[1]);
+    tl->addItem(current[0]);
+    tl->update();
 }

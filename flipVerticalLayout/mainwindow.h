@@ -3,6 +3,7 @@
 
 #include <QWidget>
 #include <vector>
+#include <map>
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }
@@ -17,15 +18,17 @@ public:
     ~MainWindow();
 
 private slots:
-    void on_pushButtonFlipL_clicked();
+    void on_pushButtonFlip_clicked();
 
-    void on_pushButtonFlipR_clicked();
+    void on_pushButtonMenu_clicked();
 
-    void on_pushButtonShowButtonsL_clicked();
-
-    void on_pushButtonShowButtonsR_clicked();
+private:
+    void flipColumns();
 
 private:
     Ui::MainWindow *ui;
+    const std::pair<int,int> m_widthHeight{3,2};
+    const int m_sceneSize{800};
+
 };
 #endif // MAINWINDOW_H
