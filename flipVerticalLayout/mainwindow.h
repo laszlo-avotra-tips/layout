@@ -36,7 +36,7 @@ private:
 private:
     Ui::MainWindow *ui;
     const std::pair<int,int> m_widthHeight{3,2};
-    const int m_sceneSize{1440};
+    const int m_sceneSize{2160};
 
 };
 #endif // MAINWINDOW_H

@@ -31,7 +31,7 @@ private:
     FormNavigator* m_navigator{nullptr};
 
     std::map<QString, QWidget*> m_container;
-    bool m_isFullScreen{false};
+    bool m_isFullScreen{true};
 };
 
 #endif // WIDGETCONTAINER_H
