@@ -47,6 +47,9 @@ color: white;
 }
 QLabel{
 font: 60pt &quot;Helvetica Neue&quot;;
+}
+QFrame{
+border: 0px;
 }</string>
      </property>
      <property name="currentIndex">
