@@ -1,5 +1,8 @@
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
+#include "widgetcontainer.h"
+#include "pagefactory.h"
+
 #include <QDebug>
 #include <QLayoutItem>
 #include <QLayout>
@@ -9,6 +12,7 @@ MainWindow::MainWindow(QWidget *parent)
     , ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
+
     ui->pushButtonFlip->hide();
 
     ui->frameButtons->hide();
@@ -54,7 +58,7 @@ void MainWindow::on_pushButtonMenu_clicked()
 
 void MainWindow::flipColumns()
 {
-    QLayout* tl = this->layout();
+    QLayout* tl = layout();
     std::vector<QLayoutItem*> current{tl->itemAt(0),tl->itemAt(1),tl->itemAt(2)};
 
     tl->removeItem(current[2]);
@@ -64,4 +68,14 @@ void MainWindow::flipColumns()
     tl->addItem(current[1]);
     tl->addItem(current[0]);
     tl->update();
+}
+
+void MainWindow::on_pushButton_clicked()
+{
+//    ui->stackedWidget->setCurrentIndex(1);
+}
+
+void MainWindow::on_pushButtonL_clicked()
+{
+//    ui->stackedWidget->setCurrentIndex(3);
 }

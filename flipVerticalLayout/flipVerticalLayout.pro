@@ -16,13 +16,23 @@ DEFINES += QT_DEPRECATED_WARNINGS
 #DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0x060000    # disables all the APIs deprecated before Qt 6.0.0
 
 SOURCES += \
+    formnavigator.cpp \
+    formstart.cpp \
     main.cpp \
-    mainwindow.cpp
+    mainwindow.cpp \
+    pagefactory.cpp \
+    widgetcontainer.cpp
 
 HEADERS += \
-    mainwindow.h
+    formnavigator.h \
+    formstart.h \
+    mainwindow.h \
+    pagefactory.h \
+    widgetcontainer.h
 
 FORMS += \
+    formnavigator.ui \
+    formstart.ui \
     mainwindow.ui
 
 # Default rules for deployment.
