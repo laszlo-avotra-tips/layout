@@ -93,10 +93,7 @@
       </size>
      </property>
      <property name="styleSheet">
-      <string notr="true">QPushButton{
-font: bold 12px;
-qproperty-flat: true;
-}</string>
+      <string notr="true"/>
      </property>
      <property name="frameShape">
       <enum>QFrame::StyledPanel</enum>

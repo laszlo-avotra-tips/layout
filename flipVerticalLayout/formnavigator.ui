@@ -50,6 +50,10 @@ font: 60pt &quot;Helvetica Neue&quot;;
 }
 QFrame{
 border: 0px;
+}
+QPushButton{
+font: bold 12px;
+property-flat: true;
 }</string>
      </property>
      <property name="currentIndex">

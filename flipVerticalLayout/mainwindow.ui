@@ -330,7 +330,7 @@
         </property>
         <property name="styleSheet">
          <string notr="true">QLabel{
-font: 8pt &quot;Helvetica Neue&quot;;
+font: bold 8pt &quot;Helvetica Neue&quot;;
 }</string>
         </property>
         <property name="frameShape">
