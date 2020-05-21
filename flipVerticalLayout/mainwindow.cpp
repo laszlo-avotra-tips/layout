@@ -1,5 +1,8 @@
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
+#include "widgetcontainer.h"
+#include "pagefactory.h"
+
 #include <QDebug>
 #include <QLayoutItem>
 #include <QLayout>
@@ -9,6 +12,9 @@ MainWindow::MainWindow(QWidget *parent)
     , ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
+    WidgetContainer::instance()->setStackedWidget(ui->stackedWidget);
+    PageFactory pf;
+
     ui->pushButtonFlip->hide();
 
     ui->frameButtons->hide();
@@ -78,7 +84,7 @@ void MainWindow::on_pushButton_page1_clicked()
 
 void MainWindow::on_pushButtonL_clicked()
 {
-    ui->stackedWidget->setCurrentIndex(2);
+    ui->stackedWidget->setCurrentIndex(3);
 }
 
 void MainWindow::on_pushButton_page2_clicked()

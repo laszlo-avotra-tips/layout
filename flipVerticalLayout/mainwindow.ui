@@ -13,13 +13,29 @@
   <property name="windowTitle">
    <string>MainWindow</string>
   </property>
-  <layout class="QHBoxLayout" name="horizontalLayout_2">
+  <property name="styleSheet">
+   <string notr="true">QWidget{
+background-color: white;
+}
+QLabel{
+font: 60pt &quot;Helvetica Neue&quot;;
+}</string>
+  </property>
+  <layout class="QVBoxLayout" name="verticalLayout_6">
    <item>
     <widget class="QStackedWidget" name="stackedWidget">
+     <property name="styleSheet">
+      <string notr="true"/>
+     </property>
      <property name="currentIndex">
-      <number>0</number>
+      <number>1</number>
      </property>
      <widget class="QWidget" name="pageMain">
+      <property name="styleSheet">
+       <string notr="true">QLabel{
+font: 8pt &quot;Helvetica Neue&quot;;
+}</string>
+      </property>
       <layout class="QHBoxLayout" name="horizontalLayout">
        <property name="spacing">
         <number>0</number>
@@ -446,6 +462,9 @@
       </layout>
      </widget>
      <widget class="QWidget" name="page1">
+      <property name="styleSheet">
+       <string notr="true"/>
+      </property>
       <layout class="QGridLayout">
        <property name="leftMargin">
         <number>0</number>
@@ -479,6 +498,9 @@
       </layout>
      </widget>
      <widget class="QWidget" name="page2">
+      <property name="styleSheet">
+       <string notr="true"/>
+      </property>
       <layout class="QVBoxLayout" name="verticalLayout_7">
        <property name="spacing">
         <number>0</number>
