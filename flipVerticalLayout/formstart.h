@@ -16,7 +16,9 @@ public:
     ~FormStart();
 
 private slots:
-    void on_pushButton_clicked();
+    void on_pushButtonMenu_clicked(bool checked);
+
+    void on_pushButtonPreferences_clicked();
 
 private:
     Ui::FormStart *ui;

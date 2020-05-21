@@ -261,6 +261,9 @@
           <height>1440</height>
          </size>
         </property>
+        <property name="styleSheet">
+         <string notr="true">color: #1d1d1d;</string>
+        </property>
        </widget>
       </item>
      </layout>
