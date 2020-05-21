@@ -70,12 +70,12 @@ void MainWindow::flipColumns()
     tl->update();
 }
 
-void MainWindow::on_pushButton_clicked()
+void MainWindow::on_pushButtonPage1_clicked()
 {
-//    ui->stackedWidget->setCurrentIndex(1);
+
 }
 
-void MainWindow::on_pushButtonL_clicked()
+void MainWindow::on_pushButtonPage2_clicked()
 {
-//    ui->stackedWidget->setCurrentIndex(3);
+
 }

@@ -6,8 +6,8 @@
 PageFactory::PageFactory()
 {
     MainWindow* mainWindow = new MainWindow();
-    WidgetContainer::instance()->registerWidget("mainWindow", mainWindow);
+    WidgetContainer::instance()->registerWidget("mainPage", mainWindow);
 
     FormStart* formStart = new FormStart();
-    WidgetContainer::instance()->registerWidget("pageStart", formStart);
+    WidgetContainer::instance()->registerWidget("startPage", formStart);
 }

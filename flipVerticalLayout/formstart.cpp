@@ -16,5 +16,5 @@ FormStart::~FormStart()
 
 void FormStart::on_pushButton_clicked()
 {
-    WidgetContainer::instance()->gotoPage("mainWindow");
+    WidgetContainer::instance()->gotoPage("mainPage");
 }

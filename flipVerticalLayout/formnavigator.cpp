@@ -12,13 +12,17 @@ FormNavigator::FormNavigator(QWidget *parent) :
 
     auto* stack = ui->stackedWidget;
 
-    WidgetContainer::instance()->setStackedWidget(stack);
+    auto* widgets = WidgetContainer::instance();
+
+    widgets->setStackedWidget(stack);
     PageFactory pf;
 
     int count = stack->count();
 
     qDebug() << "page count = " << count;
-    ui->stackedWidget->setCurrentIndex(count - 1);
+
+//    ui->stackedWidget->setCurrentIndex(count - 1);
+    widgets->gotoPage("startPage");
 }
 
 FormNavigator::~FormNavigator()

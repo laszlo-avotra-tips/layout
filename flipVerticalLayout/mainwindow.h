@@ -22,9 +22,9 @@ private slots:
 
     void on_pushButtonMenu_clicked();
 
-    void on_pushButton_clicked();
+    void on_pushButtonPage1_clicked();
 
-    void on_pushButtonL_clicked();
+    void on_pushButtonPage2_clicked();
 
 private:
     void flipColumns();
