@@ -29,3 +29,14 @@ FormNavigator::~FormNavigator()
 {
     delete ui;
 }
+
+void FormNavigator::display()
+{
+    const bool isFullScreen = WidgetContainer::instance()->isFullScreen();
+
+    if(isFullScreen){
+        showFullScreen();
+    } else {
+        show();
+    }
+}

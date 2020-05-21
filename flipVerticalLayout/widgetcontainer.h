@@ -18,15 +18,20 @@ public:
     void close();
     void setNavigator(FormNavigator* n);
 
+    bool isFullScreen() const;
+    void setIsFullScreen(bool isFullScreen);
+
 private:
     WidgetContainer();
 
 private:
     static WidgetContainer* m_instance;
+
     QStackedWidget* m_stackedWidget{nullptr};
     FormNavigator* m_navigator{nullptr};
 
     std::map<QString, QWidget*> m_container;
+    bool m_isFullScreen{false};
 };
 
 #endif // WIDGETCONTAINER_H

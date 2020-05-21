@@ -56,3 +56,13 @@ WidgetContainer::WidgetContainer()
 {
 
 }
+
+bool WidgetContainer::isFullScreen() const
+{
+    return m_isFullScreen;
+}
+
+void WidgetContainer::setIsFullScreen(bool isFullScreen)
+{
+    m_isFullScreen = isFullScreen;
+}

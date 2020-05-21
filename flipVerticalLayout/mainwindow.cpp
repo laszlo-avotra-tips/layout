@@ -6,6 +6,8 @@
 #include <QDebug>
 #include <QLayoutItem>
 #include <QLayout>
+#include <QFile>
+#include <QTextStream>
 
 MainWindow::MainWindow(QWidget *parent)
     : QWidget(parent)
@@ -16,9 +18,11 @@ MainWindow::MainWindow(QWidget *parent)
     ui->pushButtonFlip->hide();
 
     ui->frameButtons->hide();
-    const int w{getSceneSize()};
-    const int h{w * m_widthHeight.second / m_widthHeight.first};
+    const int h{getSceneSize()};
+    double dw = h * 1.5;
+    const int w{ int(dw) };
 
+    qDebug() << "w = " << w << ", h = " << h << ", w/h = " << float(w)/float(h);
     const QSize sizeMiddle{h,h};
     const QSize sizeSide{(w-h)/2,h};
 
@@ -84,7 +88,22 @@ void MainWindow::on_pushButtonExitL_clicked()
     WidgetContainer::instance()->gotoPage("startPage");
 }
 
-int MainWindow::getSceneSize() const
+int MainWindow::getSceneSize()
 {
-    return m_sceneSize;
+    int retVal = m_sceneSize;
+    QString fn("/Avinger_System/screen.dat");
+    QFile sf(fn);
+    if(sf.open(QIODevice::ReadOnly)){
+        qDebug() << fn << " open ok";
+        QTextStream ts(&sf);
+        int size;
+        int isFullScreen;
+        ts >> size >> isFullScreen;
+        qDebug() << fn << " open ok. size = " << size << ", isFullScreen " << isFullScreen;
+        WidgetContainer::instance()->setIsFullScreen(isFullScreen);
+        retVal = size;
+        sf.close();
+    }
+
+    return retVal;
 }

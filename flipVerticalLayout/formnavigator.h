@@ -14,6 +14,7 @@ class FormNavigator : public QWidget
 public:
     explicit FormNavigator(QWidget *parent = nullptr);
     ~FormNavigator();
+    void display();
 
 private:
     Ui::FormNavigator *ui;

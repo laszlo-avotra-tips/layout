@@ -28,7 +28,7 @@ private slots:
 
     void on_pushButtonExitL_clicked();
 
-    int getSceneSize() const;
+    int getSceneSize();
 
 private:
     void flipColumns();
