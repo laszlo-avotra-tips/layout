@@ -28,13 +28,15 @@ private slots:
 
     void on_pushButtonExitL_clicked();
 
+    int getSceneSize() const;
+
 private:
     void flipColumns();
 
 private:
     Ui::MainWindow *ui;
     const std::pair<int,int> m_widthHeight{3,2};
-    const int m_sceneSize{800};
+    const int m_sceneSize{1440};
 
 };
 #endif // MAINWINDOW_H

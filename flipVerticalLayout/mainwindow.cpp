@@ -16,8 +16,8 @@ MainWindow::MainWindow(QWidget *parent)
     ui->pushButtonFlip->hide();
 
     ui->frameButtons->hide();
-    const int w{m_sceneSize};
-    const int h{m_sceneSize * m_widthHeight.second / m_widthHeight.first};
+    const int w{getSceneSize()};
+    const int h{w * m_widthHeight.second / m_widthHeight.first};
 
     const QSize sizeMiddle{h,h};
     const QSize sizeSide{(w-h)/2,h};
@@ -82,4 +82,9 @@ void MainWindow::on_pushButtonPage2_clicked()
 void MainWindow::on_pushButtonExitL_clicked()
 {
     WidgetContainer::instance()->gotoPage("startPage");
+}
+
+int MainWindow::getSceneSize() const
+{
+    return m_sceneSize;
 }
