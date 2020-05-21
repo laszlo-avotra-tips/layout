@@ -12,8 +12,8 @@ MainWindow::MainWindow(QWidget *parent)
     , ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
-    WidgetContainer::instance()->setStackedWidget(ui->stackedWidget);
-    PageFactory pf;
+//    WidgetContainer::instance()->setStackedWidget(ui->stackedWidget);
+//    PageFactory pf;
 
     ui->pushButtonFlip->hide();
 

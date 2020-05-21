@@ -1,5 +1,6 @@
 #include "formstart.h"
 #include "ui_formstart.h"
+#include "widgetcontainer.h"
 
 FormStart::FormStart(QWidget *parent) :
     QWidget(parent),
@@ -15,5 +16,5 @@ FormStart::~FormStart()
 
 void FormStart::on_pushButton_clicked()
 {
-
+    WidgetContainer::instance()->gotoPage("mainWindow");
 }

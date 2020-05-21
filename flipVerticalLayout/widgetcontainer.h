@@ -24,7 +24,7 @@ private:
     QStackedWidget* m_stackedWidget{nullptr};
 
     std::map<QString, QWidget*> m_container;
-    std::map<int,QWidget*> m_pages;
+    std::map<QWidget*, int> m_pages;
 };
 
 #endif // WIDGETCONTAINER_H
