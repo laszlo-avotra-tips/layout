@@ -21,7 +21,6 @@ FormNavigator::FormNavigator(QWidget *parent) :
 
     qDebug() << "page count = " << count;
 
-//    ui->stackedWidget->setCurrentIndex(count - 1);
     widgets->gotoPage("startPage");
 }
 

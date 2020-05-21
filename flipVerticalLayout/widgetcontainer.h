@@ -12,7 +12,6 @@ class WidgetContainer
 public:
     static WidgetContainer* instance();
     bool registerWidget(const QString& name, QWidget* wid);
-    const std::map<QString, QWidget*>& getContainer() const;
     void setStackedWidget(QStackedWidget* sw);
     bool gotoPage(const QString& name);
 
@@ -24,7 +23,6 @@ private:
     QStackedWidget* m_stackedWidget{nullptr};
 
     std::map<QString, QWidget*> m_container;
-    std::map<QWidget*, int> m_pages;
 };
 
 #endif // WIDGETCONTAINER_H
