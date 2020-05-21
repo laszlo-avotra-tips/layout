@@ -20,6 +20,8 @@ private slots:
 
     void on_pushButtonPreferences_clicked();
 
+    void on_pushButtonShutdown_clicked();
+
 private:
     Ui::FormStart *ui;
 };

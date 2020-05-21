@@ -1,4 +1,5 @@
 #include "widgetcontainer.h"
+#include "formnavigator.h"
 
 #include <QStackedWidget>
 
@@ -39,6 +40,16 @@ bool WidgetContainer::gotoPage(const QString &name)
     }
 
     return success;
+}
+
+void WidgetContainer::close()
+{
+    m_navigator->close();
+}
+
+void WidgetContainer::setNavigator(FormNavigator *n)
+{
+    m_navigator = n;
 }
 
 WidgetContainer::WidgetContainer()

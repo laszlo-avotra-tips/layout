@@ -141,7 +141,7 @@
            <string notr="true"/>
           </property>
           <property name="text">
-           <string>Menu</string>
+           <string>             Menu</string>
           </property>
           <property name="checkable">
            <bool>true</bool>
@@ -156,28 +156,28 @@
       <item>
        <widget class="QPushButton" name="pushButtonReviewCase">
         <property name="text">
-         <string>REVIEW CASE</string>
+         <string> REVIEW CASE          </string>
         </property>
        </widget>
       </item>
       <item>
        <widget class="QPushButton" name="pushButtonExport">
         <property name="text">
-         <string>EXPORT</string>
+         <string>EXPORT                  </string>
         </property>
        </widget>
       </item>
       <item>
        <widget class="QPushButton" name="pushButtonPreferences">
         <property name="text">
-         <string>PREFERENCES</string>
+         <string>PREFERENCES        </string>
         </property>
        </widget>
       </item>
       <item>
        <widget class="QPushButton" name="pushButtonShutdown">
         <property name="text">
-         <string>SHUTDOWN</string>
+         <string>SHUTDOWN            </string>
         </property>
        </widget>
       </item>
