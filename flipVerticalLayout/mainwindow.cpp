@@ -12,8 +12,6 @@ MainWindow::MainWindow(QWidget *parent)
     , ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
-//    WidgetContainer::instance()->setStackedWidget(ui->stackedWidget);
-//    PageFactory pf;
 
     ui->pushButtonFlip->hide();
 
@@ -60,7 +58,7 @@ void MainWindow::on_pushButtonMenu_clicked()
 
 void MainWindow::flipColumns()
 {
-    QLayout* tl = ui->pageMain->layout();
+    QLayout* tl = layout();
     std::vector<QLayoutItem*> current{tl->itemAt(0),tl->itemAt(1),tl->itemAt(2)};
 
     tl->removeItem(current[2]);
@@ -74,20 +72,10 @@ void MainWindow::flipColumns()
 
 void MainWindow::on_pushButton_clicked()
 {
-    ui->stackedWidget->setCurrentIndex(1);
-}
-
-void MainWindow::on_pushButton_page1_clicked()
-{
-    ui->stackedWidget->setCurrentIndex(0);
+//    ui->stackedWidget->setCurrentIndex(1);
 }
 
 void MainWindow::on_pushButtonL_clicked()
 {
-    ui->stackedWidget->setCurrentIndex(3);
-}
-
-void MainWindow::on_pushButton_page2_clicked()
-{
-    ui->stackedWidget->setCurrentIndex(0);
+//    ui->stackedWidget->setCurrentIndex(3);
 }
