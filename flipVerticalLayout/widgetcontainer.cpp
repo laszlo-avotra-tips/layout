@@ -16,14 +16,16 @@ bool WidgetContainer::registerWidget(const QString &name, QWidget *wid)
 {
     m_container[name] = wid;
     int index = m_stackedWidget->addWidget(wid);
+    wid->setStyleSheet(m_stackedWidget->styleSheet());
 
     return index >= 0;
 }
 
 void WidgetContainer::setStackedWidget(QStackedWidget *sw)
 {
-    sw->removeWidget(sw->widget(0));
-    sw->removeWidget(sw->widget(0));
+    while(sw->count()){
+        sw->removeWidget(sw->widget(0));
+    }
 
     m_stackedWidget = sw;
 }

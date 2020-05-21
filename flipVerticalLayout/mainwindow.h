@@ -26,6 +26,8 @@ private slots:
 
     void on_pushButtonPage2_clicked();
 
+    void on_pushButtonExitL_clicked();
+
 private:
     void flipColumns();
 

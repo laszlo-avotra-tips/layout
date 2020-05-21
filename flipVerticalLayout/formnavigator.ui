@@ -15,7 +15,8 @@
   </property>
   <property name="styleSheet">
    <string notr="true">QWidget{
-background-color: white;
+background-color: dark-gray;
+color: white;
 }
 QLabel{
 font: 60pt &quot;Helvetica Neue&quot;;
@@ -39,6 +40,15 @@ font: 60pt &quot;Helvetica Neue&quot;;
    </property>
    <item>
     <widget class="QStackedWidget" name="stackedWidget">
+     <property name="styleSheet">
+      <string notr="true">QWidget{
+background-color: dark-gray;
+color: white;
+}
+QLabel{
+font: 60pt &quot;Helvetica Neue&quot;;
+}</string>
+     </property>
      <property name="currentIndex">
       <number>0</number>
      </property>

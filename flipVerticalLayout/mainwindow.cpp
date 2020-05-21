@@ -77,5 +77,9 @@ void MainWindow::on_pushButtonPage1_clicked()
 
 void MainWindow::on_pushButtonPage2_clicked()
 {
+}
 
+void MainWindow::on_pushButtonExitL_clicked()
+{
+    WidgetContainer::instance()->gotoPage("startPage");
 }

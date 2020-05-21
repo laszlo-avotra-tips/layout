@@ -14,12 +14,7 @@
    <string>MainWindow</string>
   </property>
   <property name="styleSheet">
-   <string notr="true">QWidget{
-background-color: white;
-}
-QLabel{
-font: 8pt &quot;Helvetica Neue&quot;;
-}</string>
+   <string notr="true"/>
   </property>
   <layout class="QHBoxLayout" name="horizontalLayout">
    <property name="spacing">
@@ -327,6 +322,11 @@ font: 8pt &quot;Helvetica Neue&quot;;
           <height>16777215</height>
          </size>
         </property>
+        <property name="styleSheet">
+         <string notr="true">QLabel{
+font: 8pt &quot;Helvetica Neue&quot;;
+}</string>
+        </property>
         <property name="frameShape">
          <enum>QFrame::StyledPanel</enum>
         </property>
@@ -446,38 +446,5 @@ font: 8pt &quot;Helvetica Neue&quot;;
   </action>
  </widget>
  <resources/>
- <connections>
-  <connection>
-   <sender>pushButtonExitL</sender>
-   <signal>clicked()</signal>
-   <receiver>actionExit</receiver>
-   <slot>trigger()</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>56</x>
-     <y>285</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>-1</x>
-     <y>-1</y>
-    </hint>
-   </hints>
-  </connection>
-  <connection>
-   <sender>actionExit</sender>
-   <signal>triggered()</signal>
-   <receiver>MainWindow</receiver>
-   <slot>close()</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>-1</x>
-     <y>-1</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>355</x>
-     <y>214</y>
-    </hint>
-   </hints>
-  </connection>
- </connections>
+ <connections/>
 </ui>
