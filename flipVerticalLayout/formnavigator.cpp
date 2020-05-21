@@ -15,6 +15,7 @@ FormNavigator::FormNavigator(QWidget *parent) :
     auto* widgets = WidgetContainer::instance();
 
     widgets->setStackedWidget(stack);
+    widgets->setNavigator(this);
     PageFactory pf;
 
     int count = stack->count();
