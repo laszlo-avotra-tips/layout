@@ -33,6 +33,12 @@ MainWindow::MainWindow(QWidget *parent)
     ui->frameL->setMinimumSize(sizeSide);
     ui->frameR->setMaximumSize(sizeSide);
     ui->frameR->setMinimumSize(sizeSide);
+
+    auto* buttonLayout = ui->frameButtons->layout();
+    const int bc = buttonLayout->count();
+    if(bc){
+        buttonLayout->setSpacing(h/bc);
+    }
 }
 
 MainWindow::~MainWindow()
