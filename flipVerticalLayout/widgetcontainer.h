@@ -7,6 +7,7 @@
 
 class QStackedWidget;
 class FormNavigator;
+class QDialog;
 
 class WidgetContainer
 {
@@ -15,6 +16,7 @@ public:
     bool registerWidget(const QString& name, QWidget* wid);
     void setStackedWidget(QStackedWidget* sw);
     bool gotoPage(const QString& name);
+    QDialog* getDialog(const QString& name);
     void close();
     void setNavigator(FormNavigator* n);
 
@@ -32,6 +34,7 @@ private:
 
     std::map<QString, QWidget*> m_container;
     bool m_isFullScreen{true};
+    QWidget* m_currentWidget{nullptr};
 };
 
 #endif // WIDGETCONTAINER_H

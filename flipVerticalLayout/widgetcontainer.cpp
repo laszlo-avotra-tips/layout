@@ -1,5 +1,6 @@
 #include "widgetcontainer.h"
 #include "formnavigator.h"
+#include "dialog.h"
 
 #include <QStackedWidget>
 
@@ -36,10 +37,25 @@ bool WidgetContainer::gotoPage(const QString &name)
     bool success{false};
     auto it = m_container.find(name);
     if(it != m_container.end()){
-        m_stackedWidget->setCurrentWidget(it->second);
+        if(m_currentWidget){
+            m_currentWidget->hide();
+        }
+        m_currentWidget = it->second;
+        m_stackedWidget->setCurrentWidget(m_currentWidget);
+        m_currentWidget->show();
     }
 
     return success;
+}
+
+QDialog *WidgetContainer::getDialog(const QString &name)
+{
+    QDialog* retVal{nullptr};
+    auto it = m_container.find(name);
+    if(it != m_container.end()){
+        retVal = dynamic_cast<QDialog*>(it->second);
+    }
+    return retVal;
 }
 
 void WidgetContainer::close()

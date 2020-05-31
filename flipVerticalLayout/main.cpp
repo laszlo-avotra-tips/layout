@@ -1,4 +1,5 @@
 #include "formnavigator.h"
+#include "pagefactory.h"
 
 #include <QApplication>
 

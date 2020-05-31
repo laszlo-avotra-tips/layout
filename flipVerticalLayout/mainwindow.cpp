@@ -2,6 +2,7 @@
 #include "ui_mainwindow.h"
 #include "widgetcontainer.h"
 #include "pagefactory.h"
+#include "dialog.h"
 
 #include <QDebug>
 #include <QLayoutItem>
@@ -18,7 +19,7 @@ MainWindow::MainWindow(QWidget *parent)
     ui->pushButtonFlip->hide();
 
     ui->frameButtons->hide();
-    const int h{getSceneSize()};
+    const int h{1024/getSceneSize()};
     double dw = h * 1.5;
     const int w{ int(dw) };
 
@@ -80,9 +81,29 @@ void MainWindow::flipColumns()
     tl->update();
 }
 
+void MainWindow::popDialog()
+{
+    QDialog* dialog = new Dialog(this); //WidgetContainer::instance()->getDialog("mainWindowDialog");
+//    if(m_dialog){
+//        m_dialog->setParent(this);
+//    }
+    if(dialog){
+        dialog->setModal(true);
+        dialog->show();
+        auto result = dialog->exec();
+        if( result == QDialog::Accepted){
+            qDebug() << "Accepted";
+        } else {
+            qDebug() << "Cancelled";
+            WidgetContainer::instance()->gotoPage("startPage");
+        }
+    }
+    qDebug() << "Next";
+}
+
 void MainWindow::on_pushButtonPage1_clicked()
 {
-
+    popDialog();
 }
 
 void MainWindow::on_pushButtonPage2_clicked()
@@ -112,4 +133,18 @@ int MainWindow::getSceneSize()
     }
 
     return retVal;
+}
+
+void MainWindow::showEvent(QShowEvent *se)
+{
+    QWidget::showEvent( se );
+    qDebug() << __FUNCTION__;
+    QTimer::singleShot(100,this, &MainWindow::popDialog);
+}
+
+void MainWindow::hideEvent(QHideEvent *he)
+{
+    QWidget::hideEvent( he );
+    qDebug() << __FUNCTION__;
+
 }
