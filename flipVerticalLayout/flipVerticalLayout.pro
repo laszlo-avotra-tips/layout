@@ -17,8 +17,11 @@ DEFINES += QT_DEPRECATED_WARNINGS
 
 SOURCES += \
     dialog.cpp \
+    dialog2.cpp \
+    dialogfactory.cpp \
     formnavigator.cpp \
     formstart.cpp \
+    keyboard.cpp \
     main.cpp \
     mainwindow.cpp \
     pagefactory.cpp \
@@ -26,16 +29,21 @@ SOURCES += \
 
 HEADERS += \
     dialog.h \
+    dialog2.h \
+    dialogfactory.h \
     formnavigator.h \
     formstart.h \
+    keyboard.h \
     mainwindow.h \
     pagefactory.h \
     widgetcontainer.h
 
 FORMS += \
     dialog.ui \
+    dialog2.ui \
     formnavigator.ui \
     formstart.ui \
+    keyboard.ui \
     mainwindow.ui
 
 # Default rules for deployment.

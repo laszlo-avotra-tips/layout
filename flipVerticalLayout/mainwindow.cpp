@@ -16,9 +16,9 @@ MainWindow::MainWindow(QWidget *parent)
 {
     ui->setupUi(this);
 
-    ui->pushButtonFlip->hide();
+//    ui->pushButtonFlip->hide();
 
-    ui->frameButtons->hide();
+//    ui->frameButtons->hide();
     const int h{1024/getSceneSize()};
     double dw = h * 1.5;
     const int w{ int(dw) };
@@ -81,29 +81,37 @@ void MainWindow::flipColumns()
     tl->update();
 }
 
-void MainWindow::popDialog()
+void MainWindow::openMainWindowDialog()
 {
-    QDialog* dialog = new Dialog(this); //WidgetContainer::instance()->getDialog("mainWindowDialog");
-//    if(m_dialog){
-//        m_dialog->setParent(this);
-//    }
-    if(dialog){
-        dialog->setModal(true);
-        dialog->show();
-        auto result = dialog->exec();
-        if( result == QDialog::Accepted){
-            qDebug() << "Accepted";
-        } else {
-            qDebug() << "Cancelled";
-            WidgetContainer::instance()->gotoPage("startPage");
-        }
+    auto result = WidgetContainer::instance()->openDialog(this,"mainWindowDialog");
+
+    if( result.second == QDialog::Accepted){
+        qDebug() << "Accepted";
+//        QTimer::singleShot(100,this, &MainWindow::openGreenDialog);
+        openGreenDialog();
     }
-    qDebug() << "Next";
+    else {
+        qDebug() << "Cancelled";
+        WidgetContainer::instance()->gotoPage("startPage");
+    }
+}
+
+void MainWindow::openGreenDialog()
+{
+    auto result = WidgetContainer::instance()->openDialog(this,"greenDialog");
+
+    if( result.second == QDialog::Accepted){
+        qDebug() << "Accepted";
+    } else {
+        qDebug() << "Cancelled";
+//        QTimer::singleShot(100,this, &MainWindow::openMainWindowDialog);
+        openMainWindowDialog();
+    }
 }
 
 void MainWindow::on_pushButtonPage1_clicked()
 {
-    popDialog();
+    openMainWindowDialog();
 }
 
 void MainWindow::on_pushButtonPage2_clicked()
@@ -139,7 +147,7 @@ void MainWindow::showEvent(QShowEvent *se)
 {
     QWidget::showEvent( se );
     qDebug() << __FUNCTION__;
-    QTimer::singleShot(100,this, &MainWindow::popDialog);
+    QTimer::singleShot(100,this, &MainWindow::openMainWindowDialog);
 }
 
 void MainWindow::hideEvent(QHideEvent *he)

@@ -3,7 +3,7 @@
 
 #include <map>
 #include <QString>
-#include <QWidget>
+#include "dialogfactory.h"
 
 class QStackedWidget;
 class FormNavigator;
@@ -16,7 +16,8 @@ public:
     bool registerWidget(const QString& name, QWidget* wid);
     void setStackedWidget(QStackedWidget* sw);
     bool gotoPage(const QString& name);
-    QDialog* getDialog(const QString& name);
+    QDialog* getDialog(const QString& name, QWidget* parent, int y);
+    std::pair<QDialog *, int> openDialog(QWidget* parent, const QString& name, int y = 0);
     void close();
     void setNavigator(FormNavigator* n);
 
@@ -29,10 +30,13 @@ private:
 private:
     static WidgetContainer* m_instance;
 
+    DialogFactory m_dialogFactory;
     QStackedWidget* m_stackedWidget{nullptr};
     FormNavigator* m_navigator{nullptr};
 
-    std::map<QString, QWidget*> m_container;
+    std::map<QString, QWidget*> m_widgetContainer;
+    std::map<QString, QDialog*> m_dialogContainer;
+
     bool m_isFullScreen{true};
     QWidget* m_currentWidget{nullptr};
 };

@@ -3,6 +3,8 @@
 
 #include <QDialog>
 
+class QWidget;
+
 namespace Ui {
 class Dialog;
 }
@@ -15,8 +17,12 @@ public:
     explicit Dialog(QWidget *parent = nullptr);
     ~Dialog();
 
+private slots:
+    void on_pushButtonName_clicked();
+
 private:
     Ui::Dialog *ui;
+    QWidget* m_parent{nullptr};
 };
 
 #endif // DIALOG_H

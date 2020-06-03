@@ -35,7 +35,8 @@ private slots:
     void on_pushButtonExitL_clicked();
 
     int getSceneSize();
-    void popDialog();
+    void openMainWindowDialog();
+    void openGreenDialog();
 
 private:
     void showEvent(QShowEvent* se) override;
