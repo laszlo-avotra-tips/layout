@@ -2,6 +2,7 @@
 #include "ui_mainwindow.h"
 #include "widgetcontainer.h"
 #include "pagefactory.h"
+#include "dialog.h"
 
 #include <QDebug>
 #include <QLayoutItem>
@@ -15,10 +16,10 @@ MainWindow::MainWindow(QWidget *parent)
 {
     ui->setupUi(this);
 
-    ui->pushButtonFlip->hide();
+//    ui->pushButtonFlip->hide();
 
-    ui->frameButtons->hide();
-    const int h{getSceneSize()};
+//    ui->frameButtons->hide();
+    const int h{1024/getSceneSize()};
     double dw = h * 1.5;
     const int w{ int(dw) };
 
@@ -80,9 +81,37 @@ void MainWindow::flipColumns()
     tl->update();
 }
 
+void MainWindow::openMainWindowDialog()
+{
+    auto result = WidgetContainer::instance()->openDialog(this,"mainWindowDialog");
+
+    if( result.second == QDialog::Accepted){
+        qDebug() << "Accepted";
+//        QTimer::singleShot(100,this, &MainWindow::openGreenDialog);
+        openGreenDialog();
+    }
+    else {
+        qDebug() << "Cancelled";
+        WidgetContainer::instance()->gotoPage("startPage");
+    }
+}
+
+void MainWindow::openGreenDialog()
+{
+    auto result = WidgetContainer::instance()->openDialog(this,"greenDialog");
+
+    if( result.second == QDialog::Accepted){
+        qDebug() << "Accepted";
+    } else {
+        qDebug() << "Cancelled";
+//        QTimer::singleShot(100,this, &MainWindow::openMainWindowDialog);
+        openMainWindowDialog();
+    }
+}
+
 void MainWindow::on_pushButtonPage1_clicked()
 {
-
+    openMainWindowDialog();
 }
 
 void MainWindow::on_pushButtonPage2_clicked()
@@ -112,4 +141,18 @@ int MainWindow::getSceneSize()
     }
 
     return retVal;
+}
+
+void MainWindow::showEvent(QShowEvent *se)
+{
+    QWidget::showEvent( se );
+    qDebug() << __FUNCTION__;
+    QTimer::singleShot(100,this, &MainWindow::openMainWindowDialog);
+}
+
+void MainWindow::hideEvent(QHideEvent *he)
+{
+    QWidget::hideEvent( he );
+    qDebug() << __FUNCTION__;
+
 }

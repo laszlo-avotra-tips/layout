@@ -16,23 +16,34 @@ DEFINES += QT_DEPRECATED_WARNINGS
 #DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0x060000    # disables all the APIs deprecated before Qt 6.0.0
 
 SOURCES += \
+    dialog.cpp \
+    dialog2.cpp \
+    dialogfactory.cpp \
     formnavigator.cpp \
     formstart.cpp \
+    keyboard.cpp \
     main.cpp \
     mainwindow.cpp \
     pagefactory.cpp \
     widgetcontainer.cpp
 
 HEADERS += \
+    dialog.h \
+    dialog2.h \
+    dialogfactory.h \
     formnavigator.h \
     formstart.h \
+    keyboard.h \
     mainwindow.h \
     pagefactory.h \
     widgetcontainer.h
 
 FORMS += \
+    dialog.ui \
+    dialog2.ui \
     formnavigator.ui \
     formstart.ui \
+    keyboard.ui \
     mainwindow.ui
 
 # Default rules for deployment.

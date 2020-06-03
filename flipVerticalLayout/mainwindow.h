@@ -4,6 +4,12 @@
 #include <QWidget>
 #include <vector>
 #include <map>
+#include <QEvent>
+#include <QShowEvent>
+#include <QHideEvent>
+#include <QTimer>
+
+class QDialog;
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }
@@ -29,14 +35,19 @@ private slots:
     void on_pushButtonExitL_clicked();
 
     int getSceneSize();
+    void openMainWindowDialog();
+    void openGreenDialog();
 
 private:
+    void showEvent(QShowEvent* se) override;
+    void hideEvent(QHideEvent* he) override;
     void flipColumns();
 
 private:
     Ui::MainWindow *ui;
     const std::pair<int,int> m_widthHeight{3,2};
     const int m_sceneSize{2160};
+    QDialog* m_dialog{nullptr};
 
 };
 #endif // MAINWINDOW_H
