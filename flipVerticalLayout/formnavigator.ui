@@ -15,7 +15,7 @@
   </property>
   <property name="styleSheet">
    <string notr="true">QWidget{
-background-color: dark-gray;
+background-color: black;
 color: white;
 }
 QLabel{
@@ -52,12 +52,12 @@ QFrame{
 border: 0px;
 }
 QPushButton{
-font: bold 12px;
+font: bold 48px;
 qproperty-flat: true;
 }</string>
      </property>
      <property name="currentIndex">
-      <number>0</number>
+      <number>1</number>
      </property>
      <widget class="QWidget" name="page"/>
      <widget class="QWidget" name="page_2"/>

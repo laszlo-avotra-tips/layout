@@ -18,7 +18,12 @@ Dialog::~Dialog()
     delete ui;
 }
 
-void Dialog::on_pushButtonName_clicked()
+void Dialog::on_lineEdit_returnPressed()
+{
+    qDebug() << __FUNCTION__;
+}
+
+void Dialog::on_pushButtonField_clicked()
 {
     qDebug() << __FUNCTION__;
     auto result = WidgetContainer::instance()->openDialog(this,"keyboard",100);
@@ -26,14 +31,10 @@ void Dialog::on_pushButtonName_clicked()
         qDebug() << "Accepted";
         keyboard* kb = dynamic_cast<keyboard*>(result.first);
         if(kb){
-            ui->pushButtonName->setText(kb->name());
+            ui->pushButtonField->setText(kb->name());
         }
     } else {
         qDebug() << "Cancelled";
     }
-}
 
-void Dialog::on_lineEdit_returnPressed()
-{
-    qDebug() << __FUNCTION__;
 }

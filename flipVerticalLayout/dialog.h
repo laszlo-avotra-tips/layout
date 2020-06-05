@@ -18,9 +18,9 @@ public:
     ~Dialog();
 
 private slots:
-    void on_pushButtonName_clicked();
-
     void on_lineEdit_returnPressed();
+
+    void on_pushButtonField_clicked();
 
 private:
     Ui::Dialog *ui;

@@ -60,9 +60,9 @@
          </spacer>
         </item>
         <item>
-         <widget class="QLabel" name="label">
+         <widget class="QPushButton" name="pushButton">
           <property name="text">
-           <string>Start Page</string>
+           <string>Start</string>
           </property>
          </widget>
         </item>
@@ -88,7 +88,7 @@
     <widget class="QFrame" name="frameMenu">
      <property name="maximumSize">
       <size>
-       <width>123</width>
+       <width>16777215</width>
        <height>16777215</height>
       </size>
      </property>
@@ -134,6 +134,12 @@
         </item>
         <item>
          <widget class="QPushButton" name="pushButtonMenu">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
           <property name="layoutDirection">
            <enum>Qt::LeftToRight</enum>
           </property>

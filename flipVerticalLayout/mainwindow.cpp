@@ -17,9 +17,9 @@ MainWindow::MainWindow(QWidget *parent)
     ui->setupUi(this);
 
 //    ui->pushButtonFlip->hide();
-
 //    ui->frameButtons->hide();
-    const int h{1024/getSceneSize()};
+
+    const int h{2160/getSceneSize()};
     double dw = h * 1.5;
     const int w{ int(dw) };
 

@@ -19,6 +19,9 @@ font: 24pt &quot;Helvetica Neue&quot;;
 }</string>
   </property>
   <layout class="QVBoxLayout" name="verticalLayout">
+   <property name="spacing">
+    <number>10</number>
+   </property>
    <item>
     <widget class="QFrame" name="frame_6">
      <property name="minimumSize">

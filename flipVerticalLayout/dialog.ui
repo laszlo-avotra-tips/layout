@@ -33,29 +33,33 @@
      </property>
      <layout class="QHBoxLayout" name="horizontalLayout_2">
       <item>
-       <widget class="QPushButton" name="pushButtonName">
-        <property name="sizePolicy">
-         <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
-          <horstretch>0</horstretch>
-          <verstretch>0</verstretch>
-         </sizepolicy>
+       <widget class="QLabel" name="labelField">
+        <property name="minimumSize">
+         <size>
+          <width>0</width>
+          <height>50</height>
+         </size>
         </property>
         <property name="styleSheet">
-         <string notr="true"/>
+         <string notr="true">border: 0px</string>
         </property>
         <property name="text">
-         <string/>
-        </property>
-        <property name="autoDefault">
-         <bool>false</bool>
-        </property>
-        <property name="flat">
-         <bool>true</bool>
+         <string>FIELD</string>
         </property>
        </widget>
       </item>
       <item>
-       <widget class="QLineEdit" name="lineEdit"/>
+       <widget class="QPushButton" name="pushButtonField">
+        <property name="minimumSize">
+         <size>
+          <width>0</width>
+          <height>50</height>
+         </size>
+        </property>
+        <property name="text">
+         <string>PushButton</string>
+        </property>
+       </widget>
       </item>
      </layout>
     </widget>
@@ -84,6 +88,12 @@
      <layout class="QHBoxLayout" name="horizontalLayout">
       <item>
        <widget class="QPushButton" name="pushButtonCancel">
+        <property name="minimumSize">
+         <size>
+          <width>0</width>
+          <height>50</height>
+         </size>
+        </property>
         <property name="text">
          <string>cancel</string>
         </property>
@@ -91,6 +101,12 @@
       </item>
       <item>
        <widget class="QPushButton" name="pushButtonOK">
+        <property name="minimumSize">
+         <size>
+          <width>0</width>
+          <height>50</height>
+         </size>
+        </property>
         <property name="text">
          <string>ok</string>
         </property>
@@ -102,10 +118,8 @@
   </layout>
  </widget>
  <tabstops>
-  <tabstop>lineEdit</tabstop>
   <tabstop>pushButtonOK</tabstop>
   <tabstop>pushButtonCancel</tabstop>
-  <tabstop>pushButtonName</tabstop>
  </tabstops>
  <resources/>
  <connections>

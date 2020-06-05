@@ -39,3 +39,8 @@ void FormStart::on_pushButtonShutdown_clicked()
 {
     WidgetContainer::instance()->close();
 }
+
+void FormStart::on_pushButton_clicked()
+{
+    WidgetContainer::instance()->gotoPage("mainPage");
+}

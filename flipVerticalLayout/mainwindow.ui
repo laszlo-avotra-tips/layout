@@ -6,9 +6,21 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>633</width>
-    <height>476</height>
+    <width>2500</width>
+    <height>906</height>
    </rect>
+  </property>
+  <property name="minimumSize">
+   <size>
+    <width>0</width>
+    <height>0</height>
+   </size>
+  </property>
+  <property name="maximumSize">
+   <size>
+    <width>3240</width>
+    <height>2160</height>
+   </size>
   </property>
   <property name="windowTitle">
    <string>MainWindow</string>
@@ -48,7 +60,7 @@
      </property>
      <property name="maximumSize">
       <size>
-       <width>80</width>
+       <width>16777215</width>
        <height>16777215</height>
       </size>
      </property>
@@ -72,7 +84,7 @@
        <number>0</number>
       </property>
       <property name="bottomMargin">
-       <number>40</number>
+       <number>100</number>
       </property>
       <item>
        <widget class="QPushButton" name="pushButtonMenu">
@@ -90,7 +102,7 @@
         </property>
         <property name="maximumSize">
          <size>
-          <width>80</width>
+          <width>16777215</width>
           <height>16777215</height>
          </size>
         </property>
@@ -159,7 +171,7 @@
            <property name="minimumSize">
             <size>
              <width>80</width>
-             <height>25</height>
+             <height>50</height>
             </size>
            </property>
            <property name="maximumSize">
@@ -184,7 +196,7 @@
            <property name="minimumSize">
             <size>
              <width>80</width>
-             <height>25</height>
+             <height>50</height>
             </size>
            </property>
            <property name="text">
@@ -203,7 +215,7 @@
            <property name="minimumSize">
             <size>
              <width>80</width>
-             <height>25</height>
+             <height>50</height>
             </size>
            </property>
            <property name="text">
@@ -219,6 +231,12 @@
    </item>
    <item>
     <widget class="QFrame" name="frameM">
+     <property name="sizePolicy">
+      <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+       <horstretch>0</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
+     </property>
      <property name="styleSheet">
       <string notr="true"/>
      </property>
@@ -312,7 +330,7 @@
        <number>0</number>
       </property>
       <property name="bottomMargin">
-       <number>40</number>
+       <number>100</number>
       </property>
       <item>
        <widget class="QFrame" name="frameStatus">
@@ -329,9 +347,7 @@
          </size>
         </property>
         <property name="styleSheet">
-         <string notr="true">QLabel{
-font: bold 8pt &quot;Helvetica Neue&quot;;
-}</string>
+         <string notr="true"/>
         </property>
         <property name="frameShape">
          <enum>QFrame::StyledPanel</enum>
@@ -360,7 +376,7 @@ font: bold 8pt &quot;Helvetica Neue&quot;;
            <property name="minimumSize">
             <size>
              <width>80</width>
-             <height>25</height>
+             <height>50</height>
             </size>
            </property>
            <property name="maximumSize">
@@ -379,7 +395,7 @@ font: bold 8pt &quot;Helvetica Neue&quot;;
            <property name="minimumSize">
             <size>
              <width>80</width>
-             <height>25</height>
+             <height>50</height>
             </size>
            </property>
            <property name="text">
@@ -392,7 +408,7 @@ font: bold 8pt &quot;Helvetica Neue&quot;;
            <property name="minimumSize">
             <size>
              <width>80</width>
-             <height>25</height>
+             <height>50</height>
             </size>
            </property>
            <property name="text">
@@ -427,7 +443,7 @@ font: bold 8pt &quot;Helvetica Neue&quot;;
         <property name="minimumSize">
          <size>
           <width>80</width>
-          <height>25</height>
+          <height>50</height>
          </size>
         </property>
         <property name="maximumSize">

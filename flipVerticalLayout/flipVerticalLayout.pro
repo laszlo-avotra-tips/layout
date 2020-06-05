@@ -1,5 +1,4 @@
 QT += core gui
-QT += virtualkeyboard
 QT += widgets
 
 CONFIG += c++11
@@ -25,7 +24,6 @@ SOURCES += \
     main.cpp \
     mainwindow.cpp \
     pagefactory.cpp \
-    virtualkeyboard.cpp \
     widgetcontainer.cpp
 
 HEADERS += \
@@ -37,7 +35,6 @@ HEADERS += \
     keyboard.h \
     mainwindow.h \
     pagefactory.h \
-    virtualkeyboard.h \
     widgetcontainer.h
 
 FORMS += \

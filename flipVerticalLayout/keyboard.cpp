@@ -15,10 +15,10 @@ keyboard::~keyboard()
 
 QString keyboard::name()
 {
-    return ui->lineEdit->text();
+    return ui->lineEditParam->text();
 }
 
 void keyboard::on_pushButtona_clicked()
 {
-    ui->lineEdit->setText(ui->lineEdit->text() + "a");
+    ui->lineEditParam->setText(ui->lineEditParam->text() + "a");
 }

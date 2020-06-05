@@ -20,7 +20,7 @@ bool WidgetContainer::registerWidget(const QString &name, QWidget *wid)
 {
     m_widgetContainer[name] = wid;
     int index = m_stackedWidget->addWidget(wid);
-    wid->setStyleSheet(m_stackedWidget->styleSheet());
+//    wid->setStyleSheet(m_stackedWidget->styleSheet());
 
     return index >= 0;
 }
