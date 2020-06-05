@@ -32,3 +32,8 @@ void Dialog::on_pushButtonName_clicked()
         qDebug() << "Cancelled";
     }
 }
+
+void Dialog::on_lineEdit_returnPressed()
+{
+    qDebug() << __FUNCTION__;
+}

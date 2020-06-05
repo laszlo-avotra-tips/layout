@@ -20,6 +20,8 @@ public:
 private slots:
     void on_pushButtonName_clicked();
 
+    void on_lineEdit_returnPressed();
+
 private:
     Ui::Dialog *ui;
     QWidget* m_parent{nullptr};
