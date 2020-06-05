@@ -17,8 +17,3 @@ QString keyboard::name()
 {
     return ui->lineEditParam->text();
 }
-
-void keyboard::on_pushButtona_clicked()
-{
-    ui->lineEditParam->setText(ui->lineEditParam->text() + "a");
-}

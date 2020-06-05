@@ -17,7 +17,6 @@ public:
     QString name();
 
 private slots:
-    void on_pushButtona_clicked();
 
 private:
     Ui::keyboard *ui;
