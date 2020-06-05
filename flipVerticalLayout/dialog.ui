@@ -6,15 +6,20 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>400</width>
-    <height>300</height>
+    <width>677</width>
+    <height>474</height>
    </rect>
   </property>
   <property name="windowTitle">
    <string>Dialog</string>
   </property>
   <property name="styleSheet">
-   <string notr="true">background-color: grey;</string>
+   <string notr="true">QDialog{
+background-color: grey;
+}
+QFrame{
+border-bottom: 2px solid white;
+}</string>
   </property>
   <property name="modal">
    <bool>true</bool>
@@ -23,7 +28,7 @@
    <item>
     <widget class="QFrame" name="frame">
      <property name="styleSheet">
-      <string notr="true">border-bottom: 2px solid white;</string>
+      <string notr="true"/>
      </property>
      <property name="frameShape">
       <enum>QFrame::StyledPanel</enum>
@@ -41,7 +46,7 @@
          </size>
         </property>
         <property name="styleSheet">
-         <string notr="true">border: 0px</string>
+         <string notr="true"/>
         </property>
         <property name="text">
          <string>FIELD</string>

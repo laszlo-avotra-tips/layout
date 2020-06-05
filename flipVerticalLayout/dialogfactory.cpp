@@ -21,7 +21,7 @@ QDialog *DialogFactory::createDialog(const QString &name, QWidget *parent, int y
     }
     if(name == "keyboard"){
         dialog = new keyboard(parent);
-        dialog->move(parent->x()-100, parent->y() + y);
+        dialog->move(parent->x() - 1000, parent->y() + y);
     }
     return dialog;
 }

@@ -18,15 +18,10 @@ Dialog::~Dialog()
     delete ui;
 }
 
-void Dialog::on_lineEdit_returnPressed()
-{
-    qDebug() << __FUNCTION__;
-}
-
 void Dialog::on_pushButtonField_clicked()
 {
     qDebug() << __FUNCTION__;
-    auto result = WidgetContainer::instance()->openDialog(this,"keyboard",100);
+    auto result = WidgetContainer::instance()->openDialog(this,"keyboard",200);
     if( result.second == QDialog::Accepted){
         qDebug() << "Accepted";
         keyboard* kb = dynamic_cast<keyboard*>(result.first);

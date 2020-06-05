@@ -26,7 +26,18 @@
    <string>MainWindow</string>
   </property>
   <property name="styleSheet">
-   <string notr="true"/>
+   <string notr="true">QWidget{
+background-color: black;
+color: white;
+}
+QLabel{
+font: 60pt &quot;Helvetica Neue&quot;;
+}
+QPushButton{
+font: bold 48px;
+qproperty-flat: true;
+}
+</string>
   </property>
   <layout class="QHBoxLayout" name="horizontalLayout">
    <property name="spacing">
@@ -300,13 +311,13 @@
      </property>
      <property name="minimumSize">
       <size>
-       <width>81</width>
+       <width>300</width>
        <height>0</height>
       </size>
      </property>
      <property name="maximumSize">
       <size>
-       <width>80</width>
+       <width>300</width>
        <height>16777215</height>
       </size>
      </property>

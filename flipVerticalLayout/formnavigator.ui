@@ -14,13 +14,7 @@
    <string>Form</string>
   </property>
   <property name="styleSheet">
-   <string notr="true">QWidget{
-background-color: black;
-color: white;
-}
-QLabel{
-font: 60pt &quot;Helvetica Neue&quot;;
-}</string>
+   <string notr="true"/>
   </property>
   <layout class="QHBoxLayout" name="horizontalLayout">
    <property name="spacing">
@@ -41,20 +35,7 @@ font: 60pt &quot;Helvetica Neue&quot;;
    <item>
     <widget class="QStackedWidget" name="stackedWidget">
      <property name="styleSheet">
-      <string notr="true">QWidget{
-background-color: dark-gray;
-color: white;
-}
-QLabel{
-font: 60pt &quot;Helvetica Neue&quot;;
-}
-QFrame{
-border: 0px;
-}
-QPushButton{
-font: bold 48px;
-qproperty-flat: true;
-}</string>
+      <string notr="true"/>
      </property>
      <property name="currentIndex">
       <number>1</number>

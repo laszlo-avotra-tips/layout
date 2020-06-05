@@ -14,7 +14,9 @@
    <string>Dialog2</string>
   </property>
   <property name="styleSheet">
-   <string notr="true">background-color: green;</string>
+   <string notr="true">QDialog{
+background-color: green;
+}</string>
   </property>
   <property name="modal">
    <bool>true</bool>
