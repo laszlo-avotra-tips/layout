@@ -95,11 +95,6 @@ void WidgetContainer::setNavigator(FormNavigator *n)
     m_navigator = n;
 }
 
-//WidgetContainer::WidgetContainer()
-//{
-
-//}
-
 bool WidgetContainer::isFullScreen() const
 {
     return m_isFullScreen;
