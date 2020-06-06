@@ -1,6 +1,7 @@
 #ifndef WIDGETCONTAINER_H
 #define WIDGETCONTAINER_H
 
+#include <vector>
 #include <map>
 #include <QString>
 #include "dialogfactory.h"
@@ -16,8 +17,9 @@ public:
     bool registerWidget(const QString& name, QWidget* wid);
     void setStackedWidget(QStackedWidget* sw);
     bool gotoPage(const QString& name);
-    QDialog* getDialog(const QString& name, QWidget* parent, int y);
-    std::pair<QDialog *, int> openDialog(QWidget* parent, const QString& name, int y = 0);
+    QDialog* getDialog(const QString& name, QWidget* parent);
+    std::pair<QDialog *, int> openDialog(QWidget* parent, const QString& name);
+    QString openKeyboard(QWidget* parent, std::vector<QString> param, int yOffset = 0);
     void close();
     void setNavigator(FormNavigator* n);
 

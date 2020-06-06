@@ -1,6 +1,7 @@
 #include "widgetcontainer.h"
 #include "formnavigator.h"
 #include "dialog.h"
+#include "keyboard.h"
 
 #include <QStackedWidget>
 #include <QDebug>
@@ -49,40 +50,43 @@ bool WidgetContainer::gotoPage(const QString &name)
     return success;
 }
 
-QDialog *WidgetContainer::getDialog(const QString &name, QWidget* parent, int y)
+QDialog *WidgetContainer::getDialog(const QString &name, QWidget* parent)
 {
-//    QDialog* retVal{nullptr};
-//    auto it = m_dialogContainer.find(name);
-//    if(it != m_dialogContainer.end())
-//    {
-//        retVal = it->second;
-//        qDebug() << name << " found";
-//    } else
-//    {
-//        retVal = m_dialogFactory.createDialog(name,parent);
-//        m_dialogContainer[name] = retVal;
-        qDebug() << name << " created";
-//    }
-//    return retVal;
-    return m_dialogFactory.createDialog(name,parent,y);
+    return m_dialogFactory.createDialog(name,parent);
 }
 
-std::pair<QDialog*, int> WidgetContainer::openDialog(QWidget *parent, const QString &name, int y)
+std::pair<QDialog*, int> WidgetContainer::openDialog(QWidget *parent, const QString &name)
 {
     int result{-1};
-    QDialog* dialog = getDialog(name,parent,y);
+    QDialog* dialog = getDialog(name,parent);
 
     if(dialog){
-//        QVariant varY(y);
-//        dialog->setProperty("Y",varY);
-//        dialog->move(parent->geometry().x(), parent->geometry().y() + y);
-        qDebug() << "X = " << dialog->x() << "Y = " << dialog->y();
-        qDebug() << "parent.X = " << parent->x() << "parent.Y = " << parent->y();
-
         dialog->show();
         result = dialog->exec();
     }
     return std::pair<QDialog*,int>{dialog, result};
+}
+
+QString WidgetContainer::openKeyboard(QWidget *parent, std::vector<QString> param, int yOffset)
+{
+    QString retVal;
+    QDialog* dialog = new keyboard(parent);
+    auto pw = parent->width();
+    auto dw = dialog->width();
+    int x = parent->x() + pw/2 - dw/2;
+    qDebug() << __FUNCTION__ << " dialog->width()=" << dw
+             << " parent->width()=" << pw;
+    dialog->move(x, parent->y() + yOffset);
+
+    dialog->show();
+
+    int result = dialog->exec();
+
+    if(result == QDialog::Accepted){
+        retVal = QString("DR. TBD");
+    }
+
+    return retVal;
 }
 
 void WidgetContainer::close()

@@ -6,6 +6,8 @@ keyboard::keyboard(QWidget *parent) :
     ui(new Ui::keyboard)
 {
     ui->setupUi(this);
+    auto* enterButton = ui->pushButton_enter;
+    connect(enterButton, &QPushButton::clicked, this, &QDialog::accept);
 }
 
 keyboard::~keyboard()
