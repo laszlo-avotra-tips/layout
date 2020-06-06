@@ -154,6 +154,30 @@ void OctKeyboard::initLetters()
 {
     for(auto* button : m_letterButtons){
         auto text = button->text();
-        connect(button, &QPushButton::clicked, [this, text] {letterClicked(text);});
+        connect(button, &QPushButton::clicked, [this, text] {
+            QString t = text;
+            if(m_isCapLock){
+                t = text.toUpper();
+            }
+            letterClicked(t);
+        });
+    }
+}
+
+void OctKeyboard::on_pushButton_capsLock_toggled(bool checked)
+{
+    m_isCapLock = checked;
+    if(m_isCapLock){
+        for( auto* letterButton : m_letterButtons){
+            auto letter = letterButton->text();
+            auto upperCase = letter.toUpper();
+            letterButton->setText(upperCase);
+        }
+    } else {
+        for( auto* letterButton : m_letterButtons){
+            auto letter = letterButton->text();
+            auto lowerCase = letter.toLower();
+            letterButton->setText(lowerCase);
+        }
     }
 }

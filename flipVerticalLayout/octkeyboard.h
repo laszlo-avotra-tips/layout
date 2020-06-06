@@ -33,6 +33,8 @@ private slots:
     void handleNumbers(const QString& text);
     void handleLetters(const QString& text);
 
+    void on_pushButton_capsLock_toggled(bool checked);
+
 private:
     void initButtonContainers();
     void initNumbers();
@@ -43,6 +45,7 @@ private:
 
     ButtonContainer m_letterButtons;
     ButtonContainer m_numberButtons;
+    bool m_isCapLock{false};
 };
 
 #endif // KEYBOARD_H

@@ -42,9 +42,16 @@ background-color: #636363;
 color: white;
 font-weight: 600;
 }
+QPushButton:pressed{
+background-color: green;
+}
 QPushButton#pushButton_delete{
 background-color: #343434;
 }
+QPushButton#pushButton_delete:pressed{
+background-color: yellow;
+}
+
 QPushButton#pushButton_enter{
 background-color: #343434;
 }
@@ -656,6 +663,9 @@ background-color: #343434;
         <property name="text">
          <string>caps lock</string>
         </property>
+        <property name="checkable">
+         <bool>true</bool>
+        </property>
        </widget>
       </item>
       <item>
@@ -1093,7 +1103,7 @@ background-color: #343434;
          </sizepolicy>
         </property>
         <property name="text">
-         <string> </string>
+         <string/>
         </property>
        </widget>
       </item>
