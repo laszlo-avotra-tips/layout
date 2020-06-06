@@ -1,7 +1,7 @@
 #include "widgetcontainer.h"
 #include "formnavigator.h"
 #include "dialog.h"
-#include "keyboard.h"
+#include "octkeyboard.h"
 
 #include <QStackedWidget>
 #include <QDebug>
@@ -70,7 +70,7 @@ std::pair<QDialog*, int> WidgetContainer::openDialog(QWidget *parent, const QStr
 QString WidgetContainer::openKeyboard(QWidget *parent, const std::vector<QString>& param, int yOffset)
 {
     QString retVal;
-    keyboard* dialog = new keyboard(param, parent);
+    OctKeyboard* dialog = new OctKeyboard(param, parent);
     auto pw = parent->width();
     auto dw = dialog->width();
     int x = parent->x() + pw/2 - dw/2;

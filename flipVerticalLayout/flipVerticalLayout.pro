@@ -20,9 +20,9 @@ SOURCES += \
     dialogfactory.cpp \
     formnavigator.cpp \
     formstart.cpp \
-    keyboard.cpp \
     main.cpp \
     mainwindow.cpp \
+    octkeyboard.cpp \
     pagefactory.cpp \
     widgetcontainer.cpp
 
@@ -32,8 +32,8 @@ HEADERS += \
     dialogfactory.h \
     formnavigator.h \
     formstart.h \
-    keyboard.h \
     mainwindow.h \
+    octkeyboard.h \
     pagefactory.h \
     widgetcontainer.h
 
@@ -42,8 +42,8 @@ FORMS += \
     dialog2.ui \
     formnavigator.ui \
     formstart.ui \
-    keyboard.ui \
-    mainwindow.ui
+    mainwindow.ui \
+    octkeyboard.ui
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin

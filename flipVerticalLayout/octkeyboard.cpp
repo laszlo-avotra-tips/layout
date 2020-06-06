@@ -1,9 +1,9 @@
-#include "keyboard.h"
-#include "ui_keyboard.h"
+#include "octkeyboard.h"
+#include "ui_octkeyboard.h"
 
-keyboard::keyboard(const vector<QString> &param, QWidget *parent) :
+OctKeyboard::OctKeyboard(const vector<QString> &param, QWidget *parent) :
     QDialog(parent),
-    ui(new Ui::keyboard)
+    ui(new Ui::OctKeyboard)
 {
     ui->setupUi(this);
 
@@ -17,21 +17,22 @@ keyboard::keyboard(const vector<QString> &param, QWidget *parent) :
     connect(enterButton, &QPushButton::clicked, this, &QDialog::accept);
 
     auto deleteButton = ui->pushButton_delete;
-    connect(deleteButton, &QPushButton::clicked, this, &keyboard::handleDelete);
+    connect(deleteButton, &QPushButton::clicked, this, &OctKeyboard::handleDelete);
+
 
 }
 
-keyboard::~keyboard()
+OctKeyboard::~OctKeyboard()
 {
     delete ui;
 }
 
-QString keyboard::editResult()
+QString OctKeyboard::editResult()
 {
     return ui->lineEditParam->text();
 }
 
-void keyboard::handleDelete()
+void OctKeyboard::handleDelete()
 {
     auto target = ui->lineEditParam;
     auto param = target->text();
@@ -39,4 +40,9 @@ void keyboard::handleDelete()
        int lastPosition = param.size() - 1;
        target->setText(param.remove(lastPosition,1));
     }
+}
+
+void OctKeyboard::initButtonContainers()
+{
+
 }

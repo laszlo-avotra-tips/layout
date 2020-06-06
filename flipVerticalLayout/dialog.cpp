@@ -2,7 +2,7 @@
 #include "ui_dialog.h"
 #include <QDebug>
 #include "widgetcontainer.h"
-#include "keyboard.h"
+#include "octkeyboard.h"
 
 Dialog::Dialog(QWidget *parent) :
     QDialog(parent),
