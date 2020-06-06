@@ -2,6 +2,10 @@
 #define KEYBOARD_H
 
 #include <QDialog>
+#include <QString>
+#include <vector>
+
+using std::vector;
 
 namespace Ui {
 class keyboard;
@@ -12,9 +16,9 @@ class keyboard : public QDialog
     Q_OBJECT
 
 public:
-    explicit keyboard(QWidget *parent = nullptr);
+    explicit keyboard(const vector<QString>& param, QWidget *parent = nullptr);
     ~keyboard();
-    QString name();
+    QString editResult();
 
 private slots:
 

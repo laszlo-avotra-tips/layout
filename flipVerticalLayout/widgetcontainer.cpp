@@ -67,10 +67,10 @@ std::pair<QDialog*, int> WidgetContainer::openDialog(QWidget *parent, const QStr
     return std::pair<QDialog*,int>{dialog, result};
 }
 
-QString WidgetContainer::openKeyboard(QWidget *parent, std::vector<QString> param, int yOffset)
+QString WidgetContainer::openKeyboard(QWidget *parent, const std::vector<QString>& param, int yOffset)
 {
     QString retVal;
-    QDialog* dialog = new keyboard(parent);
+    keyboard* dialog = new keyboard(param, parent);
     auto pw = parent->width();
     auto dw = dialog->width();
     int x = parent->x() + pw/2 - dw/2;
@@ -83,7 +83,7 @@ QString WidgetContainer::openKeyboard(QWidget *parent, std::vector<QString> para
     int result = dialog->exec();
 
     if(result == QDialog::Accepted){
-        retVal = QString("DR. TBD");
+        retVal = dialog->editResult();
     }
 
     return retVal;

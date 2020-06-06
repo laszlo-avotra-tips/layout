@@ -20,7 +20,7 @@ Dialog::~Dialog()
 
 void Dialog::on_pushButtonField_clicked()
 {
-    std::vector<QString> param{"PramName", "Val"};
+    const std::vector<QString> param{"ParamName", "Value"};
     auto text = WidgetContainer::instance()->openKeyboard(this, param, 200);
     ui->pushButtonField->setText(text);
 }
