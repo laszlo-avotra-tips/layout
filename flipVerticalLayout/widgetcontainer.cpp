@@ -70,20 +70,16 @@ std::pair<QDialog*, int> WidgetContainer::openDialog(QWidget *parent, const QStr
 QString WidgetContainer::openKeyboard(QWidget *parent, const std::vector<QString>& param, int yOffset)
 {
     QString retVal;
-    OctKeyboard* dialog = new OctKeyboard(param, parent);
+    OctKeyboard* okb = new OctKeyboard(param, parent);
     auto pw = parent->width();
-    auto dw = dialog->width();
+    auto dw = okb->width();
     int x = parent->x() + pw/2 - dw/2;
-    qDebug() << __FUNCTION__ << " dialog->width()=" << dw
-             << " parent->width()=" << pw;
-    dialog->move(x, parent->y() + yOffset);
 
-    dialog->show();
+    okb->move(x, parent->y() + yOffset);
+    okb->show();
 
-    int result = dialog->exec();
-
-    if(result == QDialog::Accepted){
-        retVal = dialog->editResult();
+    if(okb->exec() == QDialog::Accepted){
+        retVal = okb->value();
     }
 
     return retVal;
@@ -99,10 +95,10 @@ void WidgetContainer::setNavigator(FormNavigator *n)
     m_navigator = n;
 }
 
-WidgetContainer::WidgetContainer()
-{
+//WidgetContainer::WidgetContainer()
+//{
 
-}
+//}
 
 bool WidgetContainer::isFullScreen() const
 {

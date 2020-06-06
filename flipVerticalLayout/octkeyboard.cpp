@@ -1,7 +1,6 @@
 #include "octkeyboard.h"
 #include "ui_octkeyboard.h"
 
-#include <QDebug>
 
 OctKeyboard::OctKeyboard(const vector<QString> &param, QWidget *parent) :
     QDialog(parent),
@@ -24,9 +23,14 @@ OctKeyboard::OctKeyboard(const vector<QString> &param, QWidget *parent) :
     auto spaceButton = ui->pushButton_space;
     connect(spaceButton, &QPushButton::clicked, this, &OctKeyboard::handleSpace);
 
+    auto capsLockButton = ui->pushButton_capsLock;
+    connect(capsLockButton, &QPushButton::clicked, this, &OctKeyboard::handleCapsLock);
+
     initButtonContainers();
+
     initNumbers();
     connect(this, &OctKeyboard::numberClicked, this, &OctKeyboard::handleNumbers);
+
     initLetters();
     connect(this, &OctKeyboard::letterClicked, this, &OctKeyboard::handleLetters);
 }
@@ -36,14 +40,14 @@ OctKeyboard::~OctKeyboard()
     delete ui;
 }
 
-QString OctKeyboard::editResult()
+QString OctKeyboard::value()
 {
     return ui->lineEditParam->text();
 }
 
 void OctKeyboard::handleDelete()
 {
-    auto target = ui->lineEditParam;
+    auto* target = ui->lineEditParam;
     auto param = target->text();
     if(!param.isEmpty()){
        int lastPosition = param.size() - 1;
@@ -53,7 +57,7 @@ void OctKeyboard::handleDelete()
 
 void OctKeyboard::handleSpace()
 {
-    QString val = ui->lineEditParam->text() + QString(" ");
+    const QString val = ui->lineEditParam->text() + QString(" ");
     ui->lineEditParam->setText(val);
 }
 
@@ -61,23 +65,23 @@ void OctKeyboard::handleNumbers(const QString& addText)
 {
     auto stringList = addText.split("\n");
     if(stringList.size() == 2){
-        QString val = ui->lineEditParam->text() + stringList[1];
+        const QString val = ui->lineEditParam->text() + stringList[1];
         ui->lineEditParam->setText(val);
     } else if(stringList.size() == 1){
-        QString val = ui->lineEditParam->text() + stringList[0];
+        const QString val = ui->lineEditParam->text() + stringList[0];
         ui->lineEditParam->setText(val);
     }
 }
 
 void OctKeyboard::handleLetters(const QString &text)
 {
-    QString val = ui->lineEditParam->text() + text;
+    const QString val = ui->lineEditParam->text() + text;
     ui->lineEditParam->setText(val);
 }
 
 void OctKeyboard::initButtonContainers()
 {
-    ButtonContainer numbers{
+    const ButtonContainer numbers{
         ui->pushButton_zero,
         ui->pushButton_one,
         ui->pushButton_two,
@@ -104,7 +108,7 @@ void OctKeyboard::initButtonContainers()
 
     m_numberButtons = numbers;
 
-    ButtonContainer letters{
+    const ButtonContainer letters{
         ui->pushButton_a,
         ui->pushButton_b,
         ui->pushButton_c,
@@ -145,29 +149,33 @@ void OctKeyboard::initButtonContainers()
 void OctKeyboard::initNumbers()
 {
     for(auto* button : m_numberButtons){
-        auto text = button->text();
-        connect(button, &QPushButton::clicked, [this, text] {numberClicked(text);});
+        connect(
+            button,
+            &QPushButton::clicked,
+            [this, button]
+            {
+                numberClicked(button->text());
+            }
+        );
     }
 }
 
 void OctKeyboard::initLetters()
 {
     for(auto* button : m_letterButtons){
-        auto text = button->text();
-        connect(button, &QPushButton::clicked, [this, text] {
-            QString t = text;
-            if(m_isCapLock){
-                t = text.toUpper();
+        connect(
+            button,
+            &QPushButton::clicked, [this, button]
+            {
+                letterClicked(button->text());
             }
-            letterClicked(t);
-        });
+        );
     }
 }
 
-void OctKeyboard::on_pushButton_capsLock_toggled(bool checked)
+void OctKeyboard::handleCapsLock(bool checked)
 {
-    m_isCapLock = checked;
-    if(m_isCapLock){
+    if(checked){
         for( auto* letterButton : m_letterButtons){
             auto letter = letterButton->text();
             auto upperCase = letter.toUpper();

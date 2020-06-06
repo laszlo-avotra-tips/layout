@@ -21,7 +21,7 @@ class OctKeyboard : public QDialog
 public:
     explicit OctKeyboard(const vector<QString>& param, QWidget *parent = nullptr);
     ~OctKeyboard();
-    QString editResult();
+    QString value();
 
 signals:
     void letterClicked(const QString &text);
@@ -32,8 +32,7 @@ private slots:
     void handleSpace();
     void handleNumbers(const QString& text);
     void handleLetters(const QString& text);
-
-    void on_pushButton_capsLock_toggled(bool checked);
+    void handleCapsLock(bool checked);
 
 private:
     void initButtonContainers();
@@ -45,7 +44,6 @@ private:
 
     ButtonContainer m_letterButtons;
     ButtonContainer m_numberButtons;
-    bool m_isCapLock{false};
 };
 
 #endif // KEYBOARD_H

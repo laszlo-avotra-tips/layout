@@ -27,10 +27,10 @@ public:
     void setIsFullScreen(bool isFullScreen);
 
 private:
-    WidgetContainer();
 
 private:
     static WidgetContainer* m_instance;
+    WidgetContainer() = default;
 
     DialogFactory m_dialogFactory;
     QStackedWidget* m_stackedWidget{nullptr};
