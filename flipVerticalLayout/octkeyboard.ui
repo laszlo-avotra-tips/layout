@@ -330,7 +330,7 @@ background-color: #343434;
        </widget>
       </item>
       <item>
-       <widget class="QPushButton" name="pushButton_21">
+       <widget class="QPushButton" name="pushButton_minus">
         <property name="sizePolicy">
          <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
           <horstretch>0</horstretch>
@@ -344,7 +344,7 @@ background-color: #343434;
        </widget>
       </item>
       <item>
-       <widget class="QPushButton" name="pushButton_22">
+       <widget class="QPushButton" name="pushButton_equal">
         <property name="sizePolicy">
          <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
           <horstretch>0</horstretch>
@@ -559,7 +559,7 @@ background-color: #343434;
        </widget>
       </item>
       <item>
-       <widget class="QPushButton" name="pushButton_29">
+       <widget class="QPushButton" name="pushButton_angleLeft">
         <property name="sizePolicy">
          <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
           <horstretch>0</horstretch>
@@ -573,7 +573,7 @@ background-color: #343434;
        </widget>
       </item>
       <item>
-       <widget class="QPushButton" name="pushButton_30">
+       <widget class="QPushButton" name="pushButton_angleRight">
         <property name="sizePolicy">
          <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
           <horstretch>0</horstretch>
@@ -587,7 +587,7 @@ background-color: #343434;
        </widget>
       </item>
       <item>
-       <widget class="QPushButton" name="pushButton_31">
+       <widget class="QPushButton" name="pushButton_backSlash">
         <property name="sizePolicy">
          <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
           <horstretch>0</horstretch>
@@ -776,7 +776,7 @@ background-color: #343434;
        </widget>
       </item>
       <item>
-       <widget class="QPushButton" name="pushButton_39">
+       <widget class="QPushButton" name="pushButton_colon">
         <property name="sizePolicy">
          <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
           <horstretch>0</horstretch>
@@ -790,7 +790,7 @@ background-color: #343434;
        </widget>
       </item>
       <item>
-       <widget class="QPushButton" name="pushButton_40">
+       <widget class="QPushButton" name="pushButton_quote">
         <property name="sizePolicy">
          <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
           <horstretch>0</horstretch>
@@ -888,6 +888,19 @@ background-color: #343434;
        </widget>
       </item>
       <item>
+       <widget class="QPushButton" name="pushButton_x">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
+        <property name="text">
+         <string>x</string>
+        </property>
+       </widget>
+      </item>
+      <item>
        <widget class="QPushButton" name="pushButton_c">
         <property name="sizePolicy">
          <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
@@ -953,7 +966,7 @@ background-color: #343434;
        </widget>
       </item>
       <item>
-       <widget class="QPushButton" name="pushButton_50">
+       <widget class="QPushButton" name="pushButton_coma">
         <property name="sizePolicy">
          <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
           <horstretch>0</horstretch>
@@ -967,7 +980,7 @@ background-color: #343434;
        </widget>
       </item>
       <item>
-       <widget class="QPushButton" name="pushButton_51">
+       <widget class="QPushButton" name="pushButton_dot">
         <property name="sizePolicy">
          <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
           <horstretch>0</horstretch>
@@ -981,7 +994,7 @@ background-color: #343434;
        </widget>
       </item>
       <item>
-       <widget class="QPushButton" name="pushButton_52">
+       <widget class="QPushButton" name="pushButton_slash">
         <property name="sizePolicy">
          <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
           <horstretch>0</horstretch>
@@ -991,20 +1004,6 @@ background-color: #343434;
         <property name="text">
          <string>?
 /</string>
-        </property>
-       </widget>
-      </item>
-      <item>
-       <widget class="QPushButton" name="pushButton_53">
-        <property name="sizePolicy">
-         <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
-          <horstretch>0</horstretch>
-          <verstretch>0</verstretch>
-         </sizepolicy>
-        </property>
-        <property name="text">
-         <string>&quot;
-'</string>
         </property>
        </widget>
       </item>
@@ -1086,7 +1085,7 @@ background-color: #343434;
        </widget>
       </item>
       <item>
-       <widget class="QPushButton" name="pushButton_63">
+       <widget class="QPushButton" name="pushButton_space">
         <property name="sizePolicy">
          <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
           <horstretch>0</horstretch>

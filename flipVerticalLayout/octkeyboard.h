@@ -23,16 +23,25 @@ public:
     ~OctKeyboard();
     QString editResult();
 
+signals:
+    void letterClicked(const QString &text);
+    void numberClicked(const QString &text);
+
 private slots:
     void handleDelete();
+    void handleSpace();
+    void handleNumbers(const QString& text);
+    void handleLetters(const QString& text);
 
 private:
     void initButtonContainers();
+    void initNumbers();
+    void initLetters();
 
 private:
     Ui::OctKeyboard *ui;
 
-    ButtonContainer m_leterButtons;
+    ButtonContainer m_letterButtons;
     ButtonContainer m_numberButtons;
 };
 
