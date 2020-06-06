@@ -15,6 +15,10 @@ keyboard::keyboard(const vector<QString> &param, QWidget *parent) :
 
     auto* enterButton = ui->pushButton_enter;
     connect(enterButton, &QPushButton::clicked, this, &QDialog::accept);
+
+    auto deleteButton = ui->pushButton_delete;
+    connect(deleteButton, &QPushButton::clicked, this, &keyboard::handleDelete);
+
 }
 
 keyboard::~keyboard()
@@ -25,4 +29,14 @@ keyboard::~keyboard()
 QString keyboard::editResult()
 {
     return ui->lineEditParam->text();
+}
+
+void keyboard::handleDelete()
+{
+    auto target = ui->lineEditParam;
+    auto param = target->text();
+    if(!param.isEmpty()){
+       int lastPosition = param.size() - 1;
+       target->setText(param.remove(lastPosition,1));
+    }
 }

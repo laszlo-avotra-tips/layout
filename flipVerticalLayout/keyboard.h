@@ -21,6 +21,7 @@ public:
     QString editResult();
 
 private slots:
+    void handleDelete();
 
 private:
     Ui::keyboard *ui;
