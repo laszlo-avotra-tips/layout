@@ -27,7 +27,7 @@
   </property>
   <property name="styleSheet">
    <string notr="true">QWidget{
-background-color: black;
+background-color: #262626;
 color: white;
 }
 QLabel{

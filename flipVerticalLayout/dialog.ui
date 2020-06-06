@@ -14,12 +14,18 @@
    <string>Dialog</string>
   </property>
   <property name="styleSheet">
-   <string notr="true">QDialog{
-background-color: grey;
+   <string notr="true">QWidget{
+background-color: #262626;
+color: white;
 }
-QFrame{
-border-bottom: 2px solid white;
-}</string>
+QLabel{
+font: 60pt &quot;Helvetica Neue&quot;;
+}
+QPushButton{
+font: bold 48px;
+qproperty-flat: true;
+}
+</string>
   </property>
   <property name="modal">
    <bool>true</bool>
@@ -49,7 +55,7 @@ border-bottom: 2px solid white;
          <string notr="true"/>
         </property>
         <property name="text">
-         <string>FIELD</string>
+         <string>Param</string>
         </property>
        </widget>
       </item>
@@ -62,7 +68,7 @@ border-bottom: 2px solid white;
          </size>
         </property>
         <property name="text">
-         <string>PushButton</string>
+         <string>Param Value</string>
         </property>
        </widget>
       </item>
