@@ -15,6 +15,9 @@ public:
     explicit Dialog2(QWidget *parent = nullptr);
     ~Dialog2();
 
+private slots:
+    void openKeyboard();
+
 private:
     Ui::Dialog2 *ui;
 };

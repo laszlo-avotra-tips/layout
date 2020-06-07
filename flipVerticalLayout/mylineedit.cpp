@@ -1,7 +1,7 @@
-#include "mylineedit.h"
 #include <QDebug>
 #include <QMouseEvent>
 
+#include "mylineedit.h"
 
 myLineEdit::myLineEdit(QWidget *parent):QLineEdit(parent)
 {
@@ -14,6 +14,7 @@ void myLineEdit::mousePressEvent(QMouseEvent *e)
     if(bt == Qt::LeftButton){
         qDebug() << __FUNCTION__ << " left";
         e->accept();
+        emit mousePressed();
     }else if(bt == Qt::RightButton){
         qDebug() << __FUNCTION__ << " right";
         e->accept();
