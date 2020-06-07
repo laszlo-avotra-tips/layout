@@ -67,7 +67,7 @@ std::pair<QDialog*, int> WidgetContainer::openDialog(QWidget *parent, const QStr
     return std::pair<QDialog*,int>{dialog, result};
 }
 
-QString WidgetContainer::openKeyboard(QWidget *parent, const std::vector<QString>& param, int yOffset)
+QString WidgetContainer::openKeyboard(QWidget *parent, const ParameterType& param, int yOffset)
 {
     QString retVal;
     OctKeyboard* okb = new OctKeyboard(param, parent);

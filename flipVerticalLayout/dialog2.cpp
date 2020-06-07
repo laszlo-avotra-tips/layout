@@ -21,7 +21,7 @@ void Dialog2::openKeyboard()
     QString paramName = ui->label->text();
     QString paramValue = ui->lineEdit->text();
 
-    const std::vector<QString> param{paramName, paramValue};
+    const ParameterType param{paramName, paramValue};
     auto text = WidgetContainer::instance()->openKeyboard(this, param, 200);
     ui->lineEdit->setText(text);
 }

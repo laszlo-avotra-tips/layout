@@ -10,6 +10,8 @@ class QStackedWidget;
 class FormNavigator;
 class QDialog;
 
+using ParameterType = std::vector<QString>;
+
 class WidgetContainer
 {
 public:
@@ -19,7 +21,7 @@ public:
     bool gotoPage(const QString& name);
     QDialog* getDialog(const QString& name, QWidget* parent);
     std::pair<QDialog *, int> openDialog(QWidget* parent, const QString& name);
-    QString openKeyboard(QWidget* parent, const std::vector<QString>& param, int yOffset = 0);
+    QString openKeyboard(QWidget* parent, const ParameterType& param, int yOffset = 0);
     void close();
     void setNavigator(FormNavigator* n);
 

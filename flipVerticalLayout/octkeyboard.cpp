@@ -2,7 +2,7 @@
 #include "ui_octkeyboard.h"
 
 
-OctKeyboard::OctKeyboard(const vector<QString> &param, QWidget *parent) :
+OctKeyboard::OctKeyboard(const ParameterType &param, QWidget *parent) :
     QDialog(parent),
     ui(new Ui::OctKeyboard)
 {

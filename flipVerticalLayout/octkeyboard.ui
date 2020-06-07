@@ -1174,22 +1174,5 @@ background-color: #343434;
   </layout>
  </widget>
  <resources/>
- <connections>
-  <connection>
-   <sender>pushButton_cancel</sender>
-   <signal>clicked()</signal>
-   <receiver>OctKeyboard</receiver>
-   <slot>reject()</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>322</x>
-     <y>221</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>199</x>
-     <y>149</y>
-    </hint>
-   </hints>
-  </connection>
- </connections>
+ <connections/>
 </ui>
