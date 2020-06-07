@@ -22,6 +22,7 @@ SOURCES += \
     formstart.cpp \
     main.cpp \
     mainwindow.cpp \
+    mylineedit.cpp \
     octkeyboard.cpp \
     pagefactory.cpp \
     widgetcontainer.cpp
@@ -33,6 +34,7 @@ HEADERS += \
     formnavigator.h \
     formstart.h \
     mainwindow.h \
+    mylineedit.h \
     octkeyboard.h \
     pagefactory.h \
     widgetcontainer.h
