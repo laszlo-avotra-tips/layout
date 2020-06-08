@@ -11,8 +11,8 @@ OctKeyboard::OctKeyboard(const ParameterType &param, QWidget *parent) :
     auto paramLabel = ui->labelParam;
     auto paramLineEdit = ui->lineEditParam;
 
-    paramLabel->setText(param.first);
-    paramLineEdit->setText(param.second->text());
+    paramLabel->setText(param[0]);
+    paramLineEdit->setText(param[1]);
 
     auto* enterButton = ui->pushButton_enter;
     connect(enterButton, &QPushButton::clicked, this, &QDialog::accept);

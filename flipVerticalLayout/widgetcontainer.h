@@ -11,8 +11,8 @@ class FormNavigator;
 class QDialog;
 class QLineEdit;
 
-//using ParameterType = std::vector<QString>;
-using ParameterType = std::pair<QString,QLineEdit*>;
+using ParameterType = std::vector<QString>;
+//using ParameterType = std::pair<QString,QLineEdit*>;
 
 class WidgetContainer
 {

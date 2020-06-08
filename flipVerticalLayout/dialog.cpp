@@ -22,7 +22,7 @@ Dialog::~Dialog()
 void Dialog::openKeyboard()
 {
     QString paramName = ui->labelField->text();
-    const ParameterType param{{paramName}, {ui->lineEditField}};
+    const ParameterType param{paramName, ui->lineEditField->text()};
     auto text = WidgetContainer::instance()->openKeyboard(this, param, 200);
     ui->lineEditField->setText(text);
 }

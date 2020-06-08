@@ -20,19 +20,19 @@ Dialog2::~Dialog2()
 void Dialog2::openKeyboard()
 {
     QString paramName = ui->label->text();
-    auto* paramValue = ui->lineEdit;
+    auto paramValue = ui->lineEdit->text();
 
-    const ParameterType param{{paramName}, {paramValue}};
+    const ParameterType param{paramName, paramValue};
     auto text = WidgetContainer::instance()->openKeyboard(this, param, 200);
-    paramValue->setText(text);
+    ui->lineEdit->setText(text);
 }
 
 void Dialog2::openKeyboard2()
 {
     QString paramName = ui->label_2->text();
-    myLineEdit* paramValue = ui->lineEdit_2;
+    auto paramValue = ui->lineEdit_2->text();
 
-    const ParameterType param{{paramName}, {paramValue}};
+    const ParameterType param{paramName, paramValue};
     auto text = WidgetContainer::instance()->openKeyboard(this, param, 200);
-    paramValue->setText(text);
+    ui->lineEdit_2->setText(text);
 }

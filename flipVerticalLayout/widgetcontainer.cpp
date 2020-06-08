@@ -82,7 +82,7 @@ QString WidgetContainer::openKeyboard(QWidget *parent, const ParameterType& para
     if(okb->exec() == QDialog::Accepted){
         retVal = okb->value();
     } else {
-        retVal = param.second->text();
+        retVal = param[1];
     }
 
     return retVal;
