@@ -1164,7 +1164,7 @@ background-color: #343434;
          </size>
         </property>
         <property name="text">
-         <string>cancel</string>
+         <string>hide</string>
         </property>
        </widget>
       </item>
@@ -1174,5 +1174,22 @@ background-color: #343434;
   </layout>
  </widget>
  <resources/>
- <connections/>
+ <connections>
+  <connection>
+   <sender>pushButton_cancel</sender>
+   <signal>clicked()</signal>
+   <receiver>OctKeyboard</receiver>
+   <slot>reject()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>2292</x>
+     <y>874</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>1264</x>
+     <y>481</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
 </ui>

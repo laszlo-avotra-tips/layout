@@ -25,6 +25,9 @@ QPushButton{
 font: bold 48px;
 qproperty-flat: true;
 }
+QLineEdit{
+font: bold 48px;
+}
 </string>
   </property>
   <property name="modal">
@@ -60,15 +63,15 @@ qproperty-flat: true;
        </widget>
       </item>
       <item>
-       <widget class="QPushButton" name="pushButtonField">
-        <property name="minimumSize">
-         <size>
-          <width>0</width>
-          <height>50</height>
-         </size>
+       <widget class="myLineEdit" name="lineEditField">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
         </property>
         <property name="text">
-         <string>Param Value</string>
+         <string>asd</string>
         </property>
        </widget>
       </item>
@@ -128,6 +131,13 @@ qproperty-flat: true;
    </item>
   </layout>
  </widget>
+ <customwidgets>
+  <customwidget>
+   <class>myLineEdit</class>
+   <extends>QLineEdit</extends>
+   <header location="global">mylineedit.h</header>
+  </customwidget>
+ </customwidgets>
  <tabstops>
   <tabstop>pushButtonOK</tabstop>
   <tabstop>pushButtonCancel</tabstop>

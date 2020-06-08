@@ -11,6 +11,7 @@ Dialog::Dialog(QWidget *parent) :
 {
     ui->setupUi(this);
 
+    connect(ui->lineEditField, &myLineEdit::mousePressed, this, &Dialog::openKeyboard);
 }
 
 Dialog::~Dialog()
@@ -18,12 +19,10 @@ Dialog::~Dialog()
     delete ui;
 }
 
-void Dialog::on_pushButtonField_clicked()
+void Dialog::openKeyboard()
 {
     QString paramName = ui->labelField->text();
-    QString paramValue = ui->pushButtonField->text();
-
-    const ParameterType param{paramName, paramValue};
+    const ParameterType param{{paramName}, {ui->lineEditField}};
     auto text = WidgetContainer::instance()->openKeyboard(this, param, 200);
-    ui->pushButtonField->setText(text);
+    ui->lineEditField->setText(text);
 }

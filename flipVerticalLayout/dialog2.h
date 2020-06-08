@@ -17,6 +17,7 @@ public:
 
 private slots:
     void openKeyboard();
+    void openKeyboard2();
 
 private:
     Ui::Dialog2 *ui;

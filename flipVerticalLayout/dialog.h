@@ -18,7 +18,7 @@ public:
     ~Dialog();
 
 private slots:
-    void on_pushButtonField_clicked();
+    void openKeyboard();
 
 private:
     Ui::Dialog *ui;

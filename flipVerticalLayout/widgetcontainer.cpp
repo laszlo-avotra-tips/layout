@@ -6,6 +6,7 @@
 #include <QStackedWidget>
 #include <QDebug>
 #include <QWidget>
+#include <QLineEdit>
 
 WidgetContainer* WidgetContainer::m_instance{nullptr};
 
@@ -80,6 +81,8 @@ QString WidgetContainer::openKeyboard(QWidget *parent, const ParameterType& para
 
     if(okb->exec() == QDialog::Accepted){
         retVal = okb->value();
+    } else {
+        retVal = param.second->text();
     }
 
     return retVal;

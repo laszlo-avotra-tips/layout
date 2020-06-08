@@ -9,6 +9,7 @@ Dialog2::Dialog2(QWidget *parent) :
     ui->setupUi(this);
 
     connect(ui->lineEdit, &myLineEdit::mousePressed, this, &Dialog2::openKeyboard);
+    connect(ui->lineEdit_2, &myLineEdit::mousePressed, this, &Dialog2::openKeyboard2);
 }
 
 Dialog2::~Dialog2()
@@ -19,9 +20,19 @@ Dialog2::~Dialog2()
 void Dialog2::openKeyboard()
 {
     QString paramName = ui->label->text();
-    QString paramValue = ui->lineEdit->text();
+    auto* paramValue = ui->lineEdit;
 
-    const ParameterType param{paramName, paramValue};
+    const ParameterType param{{paramName}, {paramValue}};
     auto text = WidgetContainer::instance()->openKeyboard(this, param, 200);
-    ui->lineEdit->setText(text);
+    paramValue->setText(text);
+}
+
+void Dialog2::openKeyboard2()
+{
+    QString paramName = ui->label_2->text();
+    myLineEdit* paramValue = ui->lineEdit_2;
+
+    const ParameterType param{{paramName}, {paramValue}};
+    auto text = WidgetContainer::instance()->openKeyboard(this, param, 200);
+    paramValue->setText(text);
 }
