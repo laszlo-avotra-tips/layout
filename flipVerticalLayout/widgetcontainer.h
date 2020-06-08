@@ -31,8 +31,6 @@ public:
     void setIsFullScreen(bool isFullScreen);
 
 private:
-
-private:
     static WidgetContainer* m_instance;
     WidgetContainer() = default;
 
