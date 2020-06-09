@@ -36,3 +36,18 @@ void Dialog2::openKeyboard2()
     auto text = WidgetContainer::instance()->openKeyboard(this, param, 200);
     ui->lineEdit_2->setText(text);
 }
+
+void Dialog2::on_pushButton_clicked()
+{
+    auto& button = ui->pushButton_2;
+    QPalette pal = button->palette();
+    pal.setColor(QPalette::Button, QColor(245,196,0));
+    button->setAutoFillBackground(true);
+    button->setPalette(pal);
+    button->update();
+}
+
+void Dialog2::on_pushButton_2_clicked()
+{
+    accept();
+}
