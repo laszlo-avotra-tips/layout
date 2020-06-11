@@ -67,5 +67,5 @@ void Dialog::setDefaultSelection()
 
 bool Dialog::isFieldEmpty() const
 {
-    return ui->lineEditField->text() == QString("Required Field");
+    return ui->lineEditField->text() == QString("Required field");
 }

@@ -78,7 +78,7 @@ font:24pt &quot;Helvetica Neue&quot;;
 </string>
         </property>
         <property name="text">
-         <string>Required Field</string>
+         <string>Required field</string>
         </property>
        </widget>
       </item>
