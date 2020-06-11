@@ -20,6 +20,8 @@ public:
 private slots:
     void openKeyboard();
 
+    void on_pushButtonDown_clicked();
+
 private:
     Ui::Dialog *ui;
     QWidget* m_parent{nullptr};

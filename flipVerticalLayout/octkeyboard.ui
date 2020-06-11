@@ -39,10 +39,10 @@ border: 2px solid grey;
 
 QPushButton{
 font: 24pt &quot;Helvetica Neue&quot;;
-border-radius: 15px;
-background-color: #636363;
-color: white;
-font-weight: 600;
+background-color:#646464;
+border-radius: 10px;
+color:white;
+font-weight:600;
 }
 
 QPushButton#pushButton_delete{
@@ -289,7 +289,7 @@ background-color: #343434;
          </sizepolicy>
         </property>
         <property name="text">
-         <string>a
+         <string>&amp;&amp;
 7</string>
         </property>
        </widget>

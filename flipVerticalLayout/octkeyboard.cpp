@@ -76,6 +76,7 @@ void OctKeyboard::handleNumbers(const QString& addText)
         ui->lineEditParam->setText(val);
     }
     ui->lineEditParam->setFocus();
+    highlightNext();
 }
 
 void OctKeyboard::handleLetters(const QString &text)
@@ -87,6 +88,7 @@ void OctKeyboard::handleLetters(const QString &text)
         toggleCap();
         m_isShift = false;
     }
+    highlightNext();
 }
 
 void OctKeyboard::initButtonContainers()
@@ -224,6 +226,16 @@ void OctKeyboard::pushButtonDisabled(QPushButton *button)
     button->setText(txt.toLower());
 }
 
+void OctKeyboard::highlightNext()
+{
+    auto& button = ui->pushButton_enter;
+    QPalette pal = button->palette();
+    pal.setColor(QPalette::Button, QColor(245,196,0));
+    button->setAutoFillBackground(true);
+    button->setPalette(pal);
+    button->update();
+}
+
 void OctKeyboard::handleCapsLock(bool checked)
 {
     if(checked){
@@ -237,12 +249,14 @@ void OctKeyboard::handleCapsLock(bool checked)
 
 void OctKeyboard::on_pushButton_shiftLeft_clicked()
 {
-    toggleCap();
-    m_isShift = true;
+    if(m_isLowCap){
+        toggleCap();
+        m_isShift = true;
+    }
+    ui->lineEditParam->setFocus();
 }
 
 void OctKeyboard::on_pushButton_shiftRight_clicked()
 {
-    toggleCap();
-    m_isShift = true;
+    on_pushButton_shiftLeft_clicked();
 }

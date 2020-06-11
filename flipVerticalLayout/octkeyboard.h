@@ -47,6 +47,7 @@ private:
     void toggleCap();
     void pushButtonEnabled(QPushButton* button);
     void pushButtonDisabled(QPushButton* button);
+    void highlightNext();
 
 private:
     Ui::OctKeyboard *ui;

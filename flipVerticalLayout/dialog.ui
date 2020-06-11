@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>677</width>
+    <width>1320</width>
     <height>474</height>
    </rect>
   </property>
@@ -26,8 +26,10 @@ font: bold 48px;
 qproperty-flat: true;
 }
 QLineEdit{
-font: bold 48px;
+color:white;
+font:48pt &quot;Helvetica Neue&quot;;
 }
+
 </string>
   </property>
   <property name="modal">
@@ -58,7 +60,7 @@ font: bold 48px;
          <string notr="true"/>
         </property>
         <property name="text">
-         <string>Param</string>
+         <string>Pysician Name</string>
         </property>
        </widget>
       </item>
@@ -70,8 +72,20 @@ font: bold 48px;
           <verstretch>0</verstretch>
          </sizepolicy>
         </property>
+        <property name="styleSheet">
+         <string notr="true">color:grey;
+font:24pt &quot;Helvetica Neue&quot;;
+</string>
+        </property>
         <property name="text">
-         <string>asd</string>
+         <string>Required Field</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QPushButton" name="pushButtonDown">
+        <property name="text">
+         <string>^</string>
         </property>
        </widget>
       </item>

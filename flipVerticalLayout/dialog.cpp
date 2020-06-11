@@ -26,3 +26,8 @@ void Dialog::openKeyboard()
     auto text = WidgetContainer::instance()->openKeyboard(this, param, 200);
     ui->lineEditField->setText(text);
 }
+
+void Dialog::on_pushButtonDown_clicked()
+{
+    ui->lineEditField->setStyleSheet("");
+}

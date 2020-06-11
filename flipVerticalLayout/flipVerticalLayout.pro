@@ -25,6 +25,7 @@ SOURCES += \
     mylineedit.cpp \
     octkeyboard.cpp \
     pagefactory.cpp \
+    physicianNameModel.cpp \
     widgetcontainer.cpp
 
 HEADERS += \
@@ -37,6 +38,7 @@ HEADERS += \
     mylineedit.h \
     octkeyboard.h \
     pagefactory.h \
+    physicianNameModel.h \
     widgetcontainer.h
 
 FORMS += \
