@@ -3,6 +3,8 @@
 #include <QDebug>
 #include "widgetcontainer.h"
 #include "octkeyboard.h"
+#include "selectDialog.h"
+#include "physicianNameModel.h"
 
 Dialog::Dialog(QWidget *parent) :
     QDialog(parent),
@@ -11,7 +13,8 @@ Dialog::Dialog(QWidget *parent) :
 {
     ui->setupUi(this);
 
-    connect(ui->lineEditField, &myLineEdit::mousePressed, this, &Dialog::openKeyboard);
+    connect(ui->lineEditField, &myLineEdit::mousePressed, this, &Dialog::openSelectDialog);
+    setDefaultSelection();
 }
 
 Dialog::~Dialog()
@@ -27,7 +30,40 @@ void Dialog::openKeyboard()
     ui->lineEditField->setText(text);
 }
 
+void Dialog::openSelectDialog()
+{
+
+}
+
 void Dialog::on_pushButtonDown_clicked()
 {
-    ui->lineEditField->setStyleSheet("");
+    auto* parent = this;
+    m_selectDialog = new SelectDialog(parent);
+    auto pw = parent->width();
+    auto dw = m_selectDialog->width();
+    int xVal = x() + pw/2 - dw/2 + 200;
+
+    m_selectDialog->move(xVal, y() + 200);
+    m_selectDialog->show();
+
+    m_selectDialog->update(PhysicianNameModel::instance()->physicianNames());
+
+    if(m_selectDialog->exec() == QDialog::Accepted){
+        ui->lineEditField->setText(PhysicianNameModel::instance()->selectedPysicianName());
+        ui->lineEditField->setStyleSheet("");
+    } else {
+        QString paramName = ui->labelField->text();
+        const ParameterType param{paramName, ""};
+        auto text = WidgetContainer::instance()->openKeyboard(this, param, 200);
+        ui->lineEditField->setText(text);
+    }
+}
+
+void Dialog::setDefaultSelection()
+{
+    auto defaultName = PhysicianNameModel::instance()->defaultPysicianName();
+    if(!defaultName.isEmpty()){
+        ui->lineEditField->setStyleSheet("");
+        ui->lineEditField->setText(defaultName);
+    }
 }

@@ -4,6 +4,7 @@
 #include <QDialog>
 
 class QWidget;
+class SelectDialog;
 
 namespace Ui {
 class Dialog;
@@ -19,12 +20,16 @@ public:
 
 private slots:
     void openKeyboard();
-
+    void openSelectDialog();
     void on_pushButtonDown_clicked();
+
+private:
+    void setDefaultSelection();
 
 private:
     Ui::Dialog *ui;
     QWidget* m_parent{nullptr};
+    SelectDialog* m_selectDialog{nullptr};
 };
 
 #endif // DIALOG_H

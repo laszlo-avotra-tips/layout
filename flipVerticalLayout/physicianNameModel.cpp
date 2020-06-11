@@ -1,8 +1,13 @@
 #include "physicianNameModel.h"
 
-PhysicianNameModel::PhysicianNameModel(QObject *parent) : QObject(parent)
-{
+PhysicianNameModel* PhysicianNameModel::m_instance{nullptr};
 
+PhysicianNameModel *PhysicianNameModel::instance()
+{
+    if(!m_instance){
+        m_instance = new PhysicianNameModel();
+    }
+    return m_instance;
 }
 
 QStringList PhysicianNameModel::physicianNames() const

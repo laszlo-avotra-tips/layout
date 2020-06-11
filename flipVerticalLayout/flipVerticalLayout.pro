@@ -26,6 +26,7 @@ SOURCES += \
     octkeyboard.cpp \
     pagefactory.cpp \
     physicianNameModel.cpp \
+    selectDialog.cpp \
     widgetcontainer.cpp
 
 HEADERS += \
@@ -39,6 +40,7 @@ HEADERS += \
     octkeyboard.h \
     pagefactory.h \
     physicianNameModel.h \
+    selectDialog.h \
     widgetcontainer.h
 
 FORMS += \
@@ -47,7 +49,8 @@ FORMS += \
     formnavigator.ui \
     formstart.ui \
     mainwindow.ui \
-    octkeyboard.ui
+    octkeyboard.ui \
+    selectDialog.ui
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin

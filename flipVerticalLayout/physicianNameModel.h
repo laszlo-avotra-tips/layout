@@ -1,15 +1,13 @@
 #ifndef PHYSICIANNAMEMODEL_H
 #define PHYSICIANNAMEMODEL_H
 
-#include <QObject>
 #include <QStringList>
 #include <QString>
 
-class PhysicianNameModel : public QObject
+class PhysicianNameModel
 {
-    Q_OBJECT
 public:
-    explicit PhysicianNameModel(QObject *parent = nullptr);
+    static PhysicianNameModel* instance();
     void addPhysicianName(const QString& pn);
 
 
@@ -22,13 +20,13 @@ public:
     QString defaultPysicianName() const;
     void setDefaultPysicianName(const QString &defaultPysicianName);
 
-signals:
-
-
 private:
+    PhysicianNameModel() = default;
+    static PhysicianNameModel* m_instance;
+
     QStringList m_physicianNames{{"DR. Patel"}, {"DR. Smith"}, {"DR. Johnes"}};
     QString m_selectedPysicianName{"DR. Patel"};
-    QString m_defaultPysicianName{"DR. Smith"};
+    QString m_defaultPysicianName;
 
 };
 
