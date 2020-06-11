@@ -13,7 +13,7 @@ Dialog::Dialog(QWidget *parent) :
 {
     ui->setupUi(this);
 
-    connect(ui->lineEditField, &myLineEdit::mousePressed, this, &Dialog::openSelectDialog);
+    connect(ui->lineEditField, &myLineEdit::mousePressed, this, &Dialog::openKeyboard);
     setDefaultSelection();
 }
 
@@ -24,15 +24,12 @@ Dialog::~Dialog()
 
 void Dialog::openKeyboard()
 {
-    QString paramName = ui->labelField->text();
-    const ParameterType param{paramName, ui->lineEditField->text()};
-    auto text = WidgetContainer::instance()->openKeyboard(this, param, 200);
-    ui->lineEditField->setText(text);
-}
-
-void Dialog::openSelectDialog()
-{
-
+    if(!isFieldEmpty()){
+        QString paramName = ui->labelField->text();
+        const ParameterType param{paramName, ui->lineEditField->text(), "UPDATE"};
+        auto text = WidgetContainer::instance()->openKeyboard(this, param, 200);
+        ui->lineEditField->setText(text);
+    }
 }
 
 void Dialog::on_pushButtonDown_clicked()
@@ -53,7 +50,7 @@ void Dialog::on_pushButtonDown_clicked()
         ui->lineEditField->setStyleSheet("");
     } else {
         QString paramName = ui->labelField->text();
-        const ParameterType param{paramName, ""};
+        const ParameterType param{paramName, "", "ADD NEW"};
         auto text = WidgetContainer::instance()->openKeyboard(this, param, 200);
         ui->lineEditField->setText(text);
     }
@@ -66,4 +63,9 @@ void Dialog::setDefaultSelection()
         ui->lineEditField->setStyleSheet("");
         ui->lineEditField->setText(defaultName);
     }
+}
+
+bool Dialog::isFieldEmpty() const
+{
+    return ui->lineEditField->text() == QString("Required Field");
 }

@@ -20,11 +20,11 @@ public:
 
 private slots:
     void openKeyboard();
-    void openSelectDialog();
     void on_pushButtonDown_clicked();
 
 private:
     void setDefaultSelection();
+    bool isFieldEmpty() const;
 
 private:
     Ui::Dialog *ui;
