@@ -15,6 +15,7 @@ DEFINES += QT_DEPRECATED_WARNINGS
 #DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0x060000    # disables all the APIs deprecated before Qt 6.0.0
 
 SOURCES += \
+    consoleKeyboard.cpp \
     dialog.cpp \
     dialog2.cpp \
     dialogfactory.cpp \
@@ -23,13 +24,13 @@ SOURCES += \
     main.cpp \
     mainwindow.cpp \
     mylineedit.cpp \
-    octkeyboard.cpp \
     pagefactory.cpp \
     physicianNameModel.cpp \
     selectDialog.cpp \
     widgetcontainer.cpp
 
 HEADERS += \
+    consoleKeyboard.h \
     dialog.h \
     dialog2.h \
     dialogfactory.h \
@@ -37,19 +38,18 @@ HEADERS += \
     formstart.h \
     mainwindow.h \
     mylineedit.h \
-    octkeyboard.h \
     pagefactory.h \
     physicianNameModel.h \
     selectDialog.h \
     widgetcontainer.h
 
 FORMS += \
+    consoleKeyboard.ui \
     dialog.ui \
     dialog2.ui \
     formnavigator.ui \
     formstart.ui \
     mainwindow.ui \
-    octkeyboard.ui \
     selectDialog.ui
 
 # Default rules for deployment.

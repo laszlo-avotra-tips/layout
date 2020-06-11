@@ -1,10 +1,10 @@
-#include "octkeyboard.h"
-#include "ui_octkeyboard.h"
+#include "consoleKeyboard.h"
+#include "ui_consoleKeyboard.h"
 
 
-OctKeyboard::OctKeyboard(const ParameterType &param, QWidget *parent) :
+ConsoleKeyboard::ConsoleKeyboard(const ParameterType &param, QWidget *parent) :
     QDialog(parent),
-    ui(new Ui::OctKeyboard)
+    ui(new Ui::ConsoleKeyboard)
 {
     ui->setupUi(this);
 
@@ -20,34 +20,34 @@ OctKeyboard::OctKeyboard(const ParameterType &param, QWidget *parent) :
     connect(enterButton, &QPushButton::clicked, this, &QDialog::accept);
 
     auto deleteButton = ui->pushButton_delete;
-    connect(deleteButton, &QPushButton::clicked, this, &OctKeyboard::handleDelete);
+    connect(deleteButton, &QPushButton::clicked, this, &ConsoleKeyboard::handleDelete);
 
     auto spaceButton = ui->pushButton_space;
-    connect(spaceButton, &QPushButton::clicked, this, &OctKeyboard::handleSpace);
+    connect(spaceButton, &QPushButton::clicked, this, &ConsoleKeyboard::handleSpace);
 
     auto capsLockButton = ui->pushButton_capsLock;
-    connect(capsLockButton, &QPushButton::clicked, this, &OctKeyboard::handleCapsLock);
+    connect(capsLockButton, &QPushButton::clicked, this, &ConsoleKeyboard::handleCapsLock);
 
     initButtonContainers();
 
     initNumbers();
-    connect(this, &OctKeyboard::numberClicked, this, &OctKeyboard::handleNumbers);
+    connect(this, &ConsoleKeyboard::numberClicked, this, &ConsoleKeyboard::handleNumbers);
 
     initLetters();
-    connect(this, &OctKeyboard::letterClicked, this, &OctKeyboard::handleLetters);
+    connect(this, &ConsoleKeyboard::letterClicked, this, &ConsoleKeyboard::handleLetters);
 }
 
-OctKeyboard::~OctKeyboard()
+ConsoleKeyboard::~ConsoleKeyboard()
 {
     delete ui;
 }
 
-QString OctKeyboard::value()
+QString ConsoleKeyboard::value()
 {
     return ui->lineEditParam->text();
 }
 
-void OctKeyboard::handleDelete()
+void ConsoleKeyboard::handleDelete()
 {
     auto* target = ui->lineEditParam;
     auto param = target->text();
@@ -58,14 +58,14 @@ void OctKeyboard::handleDelete()
     ui->lineEditParam->setFocus();
 }
 
-void OctKeyboard::handleSpace()
+void ConsoleKeyboard::handleSpace()
 {
     const QString val = ui->lineEditParam->text() + QString(" ");
     ui->lineEditParam->setText(val);
     ui->lineEditParam->setFocus();
 }
 
-void OctKeyboard::handleNumbers(const QString& addText)
+void ConsoleKeyboard::handleNumbers(const QString& addText)
 {
     auto stringList = addText.split("\n");
     if(stringList.size() == 2){
@@ -76,10 +76,9 @@ void OctKeyboard::handleNumbers(const QString& addText)
         ui->lineEditParam->setText(val);
     }
     ui->lineEditParam->setFocus();
-    highlightNext();
 }
 
-void OctKeyboard::handleLetters(const QString &text)
+void ConsoleKeyboard::handleLetters(const QString &text)
 {
     const QString val = ui->lineEditParam->text() + text;
     ui->lineEditParam->setText(val);
@@ -88,10 +87,9 @@ void OctKeyboard::handleLetters(const QString &text)
         toggleCap();
         m_isShift = false;
     }
-    highlightNext();
 }
 
-void OctKeyboard::initButtonContainers()
+void ConsoleKeyboard::initButtonContainers()
 {
     const ButtonContainer numbers{
         ui->pushButton_zero,
@@ -158,7 +156,7 @@ void OctKeyboard::initButtonContainers()
     m_letterButtons = letters;
 }
 
-void OctKeyboard::initNumbers()
+void ConsoleKeyboard::initNumbers()
 {
     for(auto* button : m_numberButtons){
         connect(
@@ -172,7 +170,7 @@ void OctKeyboard::initNumbers()
     }
 }
 
-void OctKeyboard::initLetters()
+void ConsoleKeyboard::initLetters()
 {
     for(auto* button : m_letterButtons){
         connect(
@@ -185,7 +183,7 @@ void OctKeyboard::initLetters()
     }
 }
 
-void OctKeyboard::toLowCap()
+void ConsoleKeyboard::toLowCap()
 {
     for( auto* letterButton : m_letterButtons){
         auto letter = letterButton->text();
@@ -195,7 +193,7 @@ void OctKeyboard::toLowCap()
     }
 }
 
-void OctKeyboard::toHighCap()
+void ConsoleKeyboard::toHighCap()
 {
     for( auto* letterButton : m_letterButtons){
         auto letter = letterButton->text();
@@ -205,7 +203,7 @@ void OctKeyboard::toHighCap()
     }
 }
 
-void OctKeyboard::toggleCap()
+void ConsoleKeyboard::toggleCap()
 {
     if(m_isLowCap){
         toHighCap();
@@ -214,29 +212,19 @@ void OctKeyboard::toggleCap()
     }
 }
 
-void OctKeyboard::pushButtonEnabled(QPushButton *button)
+void ConsoleKeyboard::pushButtonEnabled(QPushButton *button)
 {
     auto txt = button->text();
     button->setText(txt.toUpper());
 }
 
-void OctKeyboard::pushButtonDisabled(QPushButton *button)
+void ConsoleKeyboard::pushButtonDisabled(QPushButton *button)
 {
     auto txt = button->text();
     button->setText(txt.toLower());
 }
 
-void OctKeyboard::highlightNext()
-{
-    auto& button = ui->pushButton_enter;
-    QPalette pal = button->palette();
-    pal.setColor(QPalette::Button, QColor(245,196,0));
-    button->setAutoFillBackground(true);
-    button->setPalette(pal);
-    button->update();
-}
-
-void OctKeyboard::handleCapsLock(bool checked)
+void ConsoleKeyboard::handleCapsLock(bool checked)
 {
     if(checked){
         pushButtonEnabled(ui->pushButton_capsLock);
@@ -245,18 +233,19 @@ void OctKeyboard::handleCapsLock(bool checked)
         pushButtonDisabled(ui->pushButton_capsLock);
         toLowCap();
     }
+    ui->lineEditParam->setFocus();
 }
 
-void OctKeyboard::on_pushButton_shiftLeft_clicked()
+void ConsoleKeyboard::on_pushButton_shiftLeft_clicked()
+{
+    on_pushButton_shiftRight_clicked();
+}
+
+void ConsoleKeyboard::on_pushButton_shiftRight_clicked()
 {
     if(m_isLowCap){
         toggleCap();
         m_isShift = true;
     }
     ui->lineEditParam->setFocus();
-}
-
-void OctKeyboard::on_pushButton_shiftRight_clicked()
-{
-    on_pushButton_shiftLeft_clicked();
 }

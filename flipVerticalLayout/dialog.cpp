@@ -2,7 +2,7 @@
 #include "ui_dialog.h"
 #include <QDebug>
 #include "widgetcontainer.h"
-#include "octkeyboard.h"
+#include "consoleKeyboard.h"
 #include "selectDialog.h"
 #include "physicianNameModel.h"
 
